@@ -1,0 +1,12 @@
+#navbarSupportedContent{
+    font-size: 18px;
+}
+.nv{
+    margin-left: 20px;
+}
+.navbar{
+    height: 48px;
+}
+.navbar a:hover{
+    color: black;
+}

@@ -1,0 +1,94 @@
+.hey1{
+    left: 0;
+    bottom:0;
+    right: 0;
+    top: 0;
+    position: absolute;}
+
+.row{
+     margin-top: 170px;
+}
+
+.form{
+    position:absolute;
+    left: 30%;
+    width: 400px;
+    height: 500px;
+    border-radius: 10px;
+    padding: 40px, 25px;
+    margin-left: 80px;
+}
+
+.form h2{
+    margin-bottom: 20px;
+    font-size: 30px;
+    margin-top: 20px;
+}
+.form input{
+    width: 90%;
+    height:25px;
+    padding-top: 10px;
+    margin-bottom: 15px;
+    background: transparent;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    font-size: 15px;
+    letter-spacing: 1px;
+    outline: none;
+}
+#sup{
+    display: none;}
+   
+.form input:focus{
+    outline: none;
+}
+::placeholder{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.icons a:hover{
+    color: aqua;
+}
+.btnn{
+    width: 100%;
+    border-radius: 5px;
+    background-color: rgb(10, 156, 10);
+    border: none;
+}
+.btnn:hover{
+    background-color: rgb(1, 80, 1);
+}
+.form a{
+    text-decoration: none;
+    width: 220px;
+    text-align: center;
+    padding-left: 5px;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+.form a:hover{
+    color: aqua;
+}
+h6{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 12px;
+    margin-top: 5px;
+}
+.see{
+    background: transparent;
+    color: rgb(21, 33, 209);
+    border-style: none;
+} 
+.bord{
+    margin-top: -80px;
+    border: 2px solid white;
+    position: absolute;
+    left: 32%;
+}
+i{
+    color: rgb(43, 131, 226);
+}
+i:hover{
+    color: blue;
+}

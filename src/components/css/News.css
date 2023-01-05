@@ -1,0 +1,11 @@
+.card{
+    width: 18rem;
+    
+}
+.card:hover{
+    box-shadow: 3px 4px 75px -6px rgba(63,209,242,1);
+    background-color: aliceblue;
+}
+.card-body:hover{
+    background-color: aliceblue;
+}
