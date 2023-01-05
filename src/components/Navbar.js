@@ -8,7 +8,7 @@ const Navbar = (props)=> {
         <nav className= {`navbar navbar-expand-lg fixed-top navbar-${props.mode} bg-${props.mode}`} >
             <div className="container-fluid">
             <span className="navbar-brand fs-3 px-3"><i className="fa fa-x fa-newspaper-o"></i> NEWSHALA</span>
-                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="/navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                     </button>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
@@ -34,7 +34,7 @@ const Navbar = (props)=> {
                     </ul>
                     <div className="form-check form-switch">
                          <input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" onClick={props.toggleMode}/>
-                         <label className="form-check-label" htmlFor="flexSwitchCheckDefault" style={props.mode==='light'?{color:'black'}:{color:'white'}}>Enable Darkmode</label>
+                         <label className="form-check-label" id ='lbl' htmlFor="flexSwitchCheckDefault" style={props.mode==='light'?{color:'black'}:{color:'white'}}>Enable Darkmode</label>
                          </div>
                 </div>
             </div>

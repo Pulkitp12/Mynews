@@ -4,9 +4,28 @@
 .nv{
     margin-left: 20px;
 }
-.navbar{
-    height: 48px;
-}
 .navbar a:hover{
     color: black;
+}
+@media screen and (max-width:800px){
+    
+    .navbar{
+        margin-bottom: 20px;
+    }
+     i{
+        margin-left: 0px;
+    }
+    #flexSwitchCheckDefault{
+        margin-left: -25px;
+        border: 1px solid gray;
+        margin-top: 6px;
+    }
+    #lbl{
+        display: block;
+        margin-left: 20px;
+        margin-top: 10px;
+    }
+   .nv{
+    border-bottom: 1px solid rgba(128, 128, 128, 0.436);
+   }
 }

@@ -75,6 +75,9 @@ h6{
     font-size: 12px;
     margin-top: 5px;
 }
+#sub i{
+    margin-left: 40px;
+}
 .see{
     background: transparent;
     color: rgb(21, 33, 209);
@@ -91,4 +94,29 @@ i{
 }
 i:hover{
     color: blue;
+}
+
+@media screen and (max-width:800px){
+    .form{
+        position: initial;
+        margin-left: 50px;
+        margin-right: 20px;
+        width: 320px;
+    }
+    #sub i{
+        margin-left: 25px;
+    }
+    #sup{
+        position: initial;
+        padding-bottom: 20px;
+    }
+    #sup button{
+        margin-top: 10px;
+        margin-left: 90px;
+        width: 50%;
+    }
+    .bord{
+        width: 350px;
+        margin-left: 25px;
+    }
 }

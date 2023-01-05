@@ -9,7 +9,6 @@ const About = (props)=> {
                  title ="1"
                  position="absolute"
                  width="30%"
-                 id="myId"
                  height="400px"
                  frameborder="1" 
                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
@@ -83,35 +82,6 @@ const About = (props)=> {
             allowfullscreen="true"/>
       <iframe src="https://www.youtube.com/embed/HV_WLz0pcO4?autoplay=1&mute=1&enablejsapi=1"
                  title ="9"
-                 position="absolute"
-                 width="30%"
-                 id="myId"
-                 height="400px"
-                 frameborder="1" 
-                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                 allowFullScreen="true"></iframe>      
-    </div>
-    <div className='py-3'>
-      <iframe src="https://www.youtube.com/embed/LhQ4hJzMPrQ?autoplay=1&mute=1&enablejsapi=1"
-                 title ="10"
-                 position="absolute"
-                 width="30%"
-                 id="myId"
-                 height="400px"
-                 frameborder="1" 
-                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                 allowfullscreen="true"></iframe>
-      <iframe src="https://www.youtube.com/embed/uMA4BJWOO-g?autoplay=1&mute=1&enablejsapi=1"
-            title ="11"
-      position="absolute"
-            width="30%"
-            id="myId"
-            height="400px"
-            frameborder="1" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen="true"/>
-      <iframe src="https://www.youtube.com/embed/HV_WLz0pcO4?autoplay=1&mute=1&enablejsapi=1"
-                title ="12"
                  position="absolute"
                  width="30%"
                  id="myId"

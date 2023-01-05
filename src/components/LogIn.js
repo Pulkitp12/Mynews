@@ -52,12 +52,12 @@ const LogIn = (props) => {
         <button onClick={show} className="btn btn-sm btn-primary">SignUp</button>
         </div>
         <span className='mt-3'><h2 className='text-center'>Log In With</h2></span>
-        <div className='row mt-4'>
+        <div className='mt-4'id='icns'>
         
-        <div className='col-md-3 '><a href="/"><i className="fa fa-2x fa-facebook-official"></i></a></div>
-            <div className='col-md-3'><a href="/"><i className="fa fa-x fa-google-plus"></i></a></div>
-            <div className='col-md-3 '><a href="/"><i className="fa fa-2x fa-instagram"></i></a></div>
-            <div className='col-md-3'><a href="/"><i className="fa fa-2x fa-linkedin-square"></i></a></div>
+        <a href="/"><i className="fa fa-2x fa-facebook-official"></i></a>
+            <a href="/"><i className="fa fa-x fa-google-plus"></i></a>
+           <a href="/"><i className="fa fa-2x fa-instagram"></i></a>
+           <a href="/"><i className="fa fa-2x fa-linkedin-square"></i></a>
            
         </div>
       </div>
