@@ -29,7 +29,7 @@
     height:25px;
     padding-top: 10px;
     margin-bottom: 15px;
-    background: transparent;
+    background-color: aliceblue;
     border-top: none;
     border-left: none;
     border-right: none;
@@ -38,6 +38,7 @@
     outline: none;
 }
 #sup{
+    margin-top: 10px;
     display: none;}
    
 .form input:focus{
@@ -50,14 +51,8 @@
 .icons a:hover{
     color: aqua;
 }
-.btnn{
+#lgn{
     width: 100%;
-    border-radius: 5px;
-    background-color: rgb(10, 156, 10);
-    border: none;
-}
-.btnn:hover{
-    background-color: rgb(1, 80, 1);
 }
 .form a{
     text-decoration: none;
@@ -104,9 +99,10 @@ i:hover{
         width: 320px;
     }
     #sub i{
-        margin-left: 25px;
+        margin-left: 10px;
     }
     #sup{
+        margin-top: -10px;
         position: initial;
         padding-bottom: 20px;
     }
@@ -119,4 +115,11 @@ i:hover{
         width: 350px;
         margin-left: 25px;
     }
+}
+#ale{
+    margin-top: 200px;
+    margin-left: 50%;
+    height: 40px;
+    width: 60%;
+    font-size: 30px;
 }

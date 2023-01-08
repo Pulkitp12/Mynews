@@ -10,8 +10,12 @@ import {
   Route 
 } from "react-router-dom";
 import { useState } from 'react';
+import Subscription from './components/Subscription';
+import ContactUs from './components/ContactUs';
+
 
 const App=()=>{
+  
   const pagesize=9;
   const [mode, setMode]= useState('light')
   const toggleMode = () => {
@@ -23,11 +27,35 @@ const App=()=>{
     document.body.style.backgroundColor="white";
   }
 }
+
+const dibl=()=>{
+  let a= document.getElementById('lgn');
+  let b= document.getElementById('lgnn');
+        a.style.display="none";
+        b.style.display="block";
+}
+const diblrev=()=>{
+  let a= document.getElementById('lgn');
+  let b= document.getElementById('lgnn');
+        a.style.display="block";
+        b.style.display="none";
+}
+  const eml=(s)=>{
+     let a=s.indexOf('@');
+     let b=s.indexOf('.');
+     let c= s.length;
+     if(s.includes(" ") || a>b || (c-b)<2 || (b-a<3)){
+      return 0;
+     }
+     else{
+      return 1;
+     }
+  }
   
     return (
       <div>
             <Router>
-              <NavBar mode={mode} toggleMode={toggleMode}/>
+              <NavBar mode={mode} toggleMode={toggleMode} dibl={dibl} diblrev={diblrev}/>
                 <Routes>
                     <Route exact path="/" element={<Newscomp mode={mode} key="s" className="active col-9" category={""} pagesize={pagesize} toggleMode={toggleMode}/>}/> 
                     <Route exact path="/business" element={<Newscomp mode={mode}  key="business"  className="col-9" category={"business"} pagesize={pagesize} toggleMode={toggleMode}/>}/>
@@ -37,8 +65,10 @@ const App=()=>{
                     <Route exact path="/science" element={ <Newscomp mode={mode}  key="science" className="col-9" category={"science"} pagesize={pagesize} toggleMode={toggleMode}/>}/>
                     <Route exact path="/sports" element={<Newscomp mode={mode}  key="sports" className="col-9" category={"sports"} pagesize={pagesize} toggleMode={toggleMode}/>}/> 
                     <Route exact path="/technology" element={ <Newscomp mode={mode}  key="technology" className="col-9" category={"technology"} pagesize={pagesize} toggleMode={toggleMode}/>}/>
-                    <Route path="/login" element={<LogIn mode={mode}  toggleMode={toggleMode}/>}/>
+                    <Route path="/login" element={<LogIn mode={mode} eml={eml} diblrev={diblrev} dibl={dibl} toggleMode={toggleMode}/>}/>
+                    <Route path="/subs" element={<Subscription mode={mode}  toggleMode={toggleMode}/>}/>
                     <Route path="/about" element={<About mode={mode}  toggleMode={toggleMode}/>}/>
+                    <Route path="/contact" element={<ContactUs mode={mode} eml={eml} toggleMode={toggleMode}/>}/>
                   </Routes>               
           </Router>
       </div>

@@ -5,7 +5,7 @@
     margin-left: 20px;
 }
 .navbar a:hover{
-    color: black;
+    color: aqua;
 }
 @media screen and (max-width:800px){
     
@@ -28,4 +28,16 @@
    .nv{
     border-bottom: 1px solid rgba(128, 128, 128, 0.436);
    }
+}
+#lgnn{
+    position: fixed;
+    right: 210px;
+    margin-top: 13px;
+    top: 0;
+    font-size: 30px;
+    display: none;
+    color: brown;
+}
+#account{
+    margin-right: 50px;
 }

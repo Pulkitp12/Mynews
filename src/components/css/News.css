@@ -3,9 +3,11 @@
     
 }
 .card:hover{
-    box-shadow: 3px 4px 75px -6px rgba(63,209,242,1);
-    background-color: aliceblue;
+    box-shadow: -1px 2px 19px 11px rgba(0,242,255,1);
 }
 .card-body:hover{
     background-color: aliceblue;
+}
+.card a{
+    margin-left: 70px;
 }

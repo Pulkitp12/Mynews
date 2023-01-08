@@ -3,6 +3,7 @@ import '../components/css/navbar.css';
 import {Link}  from "react-router-dom";
 
 const Navbar = (props)=> {
+    
     return (
       <div>
         <nav className= {`navbar navbar-expand-lg fixed-top navbar-${props.mode} bg-${props.mode}`} >
@@ -24,14 +25,25 @@ const Navbar = (props)=> {
                         <i className="fa fa-fw fa-bars"></i>
                         </a>
                         <ul className="dropdown-menu">
-                            <li><Link className="dropdown-item" to="/login"><i className="fa fa-fw fa-user"></i>LogIn/SignUp</Link></li>
-                            <li><a className="dropdown-item" href="/"><i className="fa fa-fw fa-dollar"></i>Subscription</a></li>
+                            <li><Link className="dropdown-item" id="lgn" to="/login"><i className="fa fa-fw fa-user"></i>LogIn/SignUp</Link></li>
+                            <li><Link className="dropdown-item" to="/subs"><i className="fa fa-fw fa-dollar"></i>Subscription</Link></li>
                             <span><hr className="dropdown-divider"/></span>
-                            <li><a className="dropdown-item" href="/"><i className="fa fa-fw fa-envelope"></i> Contact Us</a></li>
+                            <li><Link className="dropdown-item" to="/contact"><i className="fa fa-fw fa-envelope"></i> Contact Us</Link></li>
                         </ul>
                         </li>
-                        
                     </ul>
+                    <li className="nav-item dropdown" id="lgnn">
+                    <a href='/' className="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false" ><i className="fa fa-x fa-user-circle-o" aria-hidden="true" /></a>
+                    <ul className="dropdown-menu px-3 py-3">
+                            <li className='py-2'><h5>UserName :</h5>  <p>Pulkit Pareek</p></li>
+                            
+                            <li className='py-2'><h5>Subscription :</h5>  <p>Not subscribed</p></li>
+                            
+                            <li className='py-2'><h5>Email :</h5>  <p>pulkitpareek12@gmail.com</p></li>
+                            
+                            <li className='py-2'><a href="/" onClick={props.diblrev}>sign out</a></li>
+                        </ul>
+                        </li>
                     <div className="form-check form-switch">
                          <input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" onClick={props.toggleMode}/>
                          <label className="form-check-label" id ='lbl' htmlFor="flexSwitchCheckDefault" style={props.mode==='light'?{color:'black'}:{color:'white'}}>Enable Darkmode</label>
