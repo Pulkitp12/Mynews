@@ -1,13 +1,17 @@
 .card{
     width: 18rem;
+    height: 530px;
     
 }
 .card:hover{
     box-shadow: -1px 2px 19px 11px rgba(0,242,255,1);
 }
-.card-body:hover{
-    background-color: aliceblue;
-}
 .card a{
     margin-left: 70px;
+}
+.card img{
+    height: 170px;
+}
+.titl{
+    height: 100px;
 }

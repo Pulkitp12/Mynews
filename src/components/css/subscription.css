@@ -2,7 +2,7 @@
     margin-left: 150px;
 }
 #hii a{
-    margin-left: 50px;
+    margin-left: 70px;
     width: 200px;
 }
 #i1{
@@ -18,18 +18,15 @@
     height: 500px;
 }
 #i2:hover{
-    width: 350px;
-    height: 480px;
+   
     box-shadow:  3px 2px 31px 20px rgba(242,229,46,0.83) !important;
 }
 #i1:hover{
-    width: 350px;
-    height: 480px;
+   
     box-shadow: 3px 2px 31px 20px rgba(142,156,156,1) !important;
 }
 #i3:hover{
-    width: 350px;
-    height: 480px;
+    
     box-shadow: 3px 2px 31px 20px rgba(87,242,227,1) !important;
 }
 #hii a:hover{
@@ -39,7 +36,7 @@
 .rs{
     border: 2px solid black;
     width: 180px;
-    margin-left: 60px;
+    margin-left: 80px;
     border-radius: 3px;
     margin-bottom: 20px;
 }

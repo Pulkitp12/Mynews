@@ -31,13 +31,14 @@
 }
 #lgnn{
     position: fixed;
-    right: 210px;
-    margin-top: 13px;
+    right: 170px;
+    margin-top: 17px;
     top: 0;
-    font-size: 30px;
+    font-size: 25px;
     display: none;
-    color: brown;
+    color: rgb(24, 28, 248);
 }
-#account{
-    margin-right: 50px;
+#sout{
+   font-size: 20px;
+   text-decoration: none;
 }

@@ -12,8 +12,7 @@
 .form{
     position:absolute;
     left: 30%;
-    width: 400px;
-    height: 500px;
+    width: 500px;
     border-radius: 10px;
     padding: 40px, 25px;
     margin-left: 80px;
@@ -27,12 +26,9 @@
 .form input{
     width: 90%;
     height:25px;
-    padding-top: 10px;
+    padding: 15px;
     margin-bottom: 15px;
     background-color: aliceblue;
-    border-top: none;
-    border-left: none;
-    border-right: none;
     font-size: 15px;
     letter-spacing: 1px;
     outline: none;
@@ -74,6 +70,7 @@ h6{
     margin-left: 40px;
 }
 .see{
+    font-size: 30px;
     background: transparent;
     color: rgb(21, 33, 209);
     border-style: none;
@@ -84,10 +81,10 @@ h6{
     position: absolute;
     left: 32%;
 }
-i{
+#icns i{
     color: rgb(43, 131, 226);
 }
-i:hover{
+#icns i:hover{
     color: blue;
 }
 
@@ -117,9 +114,13 @@ i:hover{
     }
 }
 #ale{
-    margin-top: 200px;
-    margin-left: 50%;
     height: 40px;
-    width: 60%;
-    font-size: 30px;
+    font-size: 15px;
+}
+#icns a{
+    margin-left: 22px;
+}
+
+form button{
+    width: 100%;
 }
