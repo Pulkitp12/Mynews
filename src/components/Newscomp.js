@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 import {Link}  from "react-router-dom";
 import InfiniteScroll from 'react-infinite-scroll-component';
 import Loader from '../components/Loader'
-import { Sidebar, Menu, MenuItem} from 'react-pro-sidebar';
+import { Sidebar, Menu, MenuItem, useProSidebar} from 'react-pro-sidebar';
 
 const NewsComp=(props)=>{
  
@@ -35,13 +35,23 @@ const NewsComp=(props)=>{
     useEffect(()=>{
         upDate();
     },[]);
-   
+    const { collapseSidebar, toggleSidebar, collapsed, toggled, broken } =
+    useProSidebar();
+    const toggle = () => {
+    toggleSidebar();
+    if (toggled) {
+      collapseSidebar();
+    } else {
+      collapseSidebar();
+    }
+    };
     return (
-      <div className='row mt-5 py-3'>
-        <div className='col-md-2 sidebar'>
-               <Sidebar>
+      <div className='mt-5 py-3'>
+        <div className='sidebar'>
+               <Sidebar style={{height: "100vh"}} defaultCollapsed={true} onMouseEnter={toggle} onMouseLeave={toggle} backgroundColor={props.mode==='light'?'#adad85':'gray'} transitionDuration={400}>
                     <Menu>
-                    <MenuItem><h2 className='text-center'>Category</h2></MenuItem>
+                      <div className='element'>
+                    <h2 className='text-center category'><i className='fa fa-fw fa-hand-o-down'></i></h2>
                         <MenuItem component={<Link to="/" />}><i className="fa fa-fw fa-text-width"></i>Top HeadLines</MenuItem>
                         <MenuItem component={<Link to="/business" />}><i className="fa fa-fw fa-bitcoin"></i>Business</MenuItem>
                         <MenuItem component={<Link to="/entertainment"/>}><i className="fa fa-fw fa-television"></i> Entertainment</MenuItem>
@@ -50,10 +60,11 @@ const NewsComp=(props)=>{
                         <MenuItem component={<Link to="/science"/>}><i className="fa fa-fw fa-lightbulb-o"></i>Science</MenuItem>
                         <MenuItem component={<Link to="/sports"/>}><i className="fa fa-fw fa-futbol-o"></i>Sports</MenuItem>
                       <MenuItem component={<Link to="/technology"/>}><i className="fa fa-fw fa-gears"></i>Technology</MenuItem>
+                      </div>
                     </Menu>
                   </Sidebar>
           </div>
-            <div className="col-md-10 main" style={props.mode==='light'?{color:'black'}:{color:'white'}}>
+            <div className="main" style={props.mode==='light'?{color:'black'}:{color:'white'}}>
              <h1 className='text-center'>{props.category?props.category.toUpperCase():"TOP HEADLINES"}</h1>
                {loading && <Loader/>}
                               <InfiniteScroll

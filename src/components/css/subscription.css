@@ -18,16 +18,15 @@
     height: 500px;
 }
 #i2:hover{
-   
-    box-shadow:  3px 2px 31px 20px rgba(242,229,46,0.83) !important;
+    box-shadow:  3px 2px 31px 10px rgba(242,229,46,0.83) !important;
 }
 #i1:hover{
    
-    box-shadow: 3px 2px 31px 20px rgba(142,156,156,1) !important;
+    box-shadow: 3px 2px 31px 10px rgba(142,156,156,1) !important;
 }
 #i3:hover{
     
-    box-shadow: 3px 2px 31px 20px rgba(87,242,227,1) !important;
+    box-shadow: 3px 2px 31px 10px rgba(87,242,227,1) !important;
 }
 #hii a:hover{
     background-color:black;

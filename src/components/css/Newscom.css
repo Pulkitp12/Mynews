@@ -1,11 +1,12 @@
-
-
 .sidebar{
     position: fixed;
+    z-index: 5;
 }
 .main{
-    margin-left: 310px;
+    margin-top: 10px;
+    margin-left: 200px;
 }
-Menu{
+.element{
     margin-top: 50px;
+    font-size: 20px;
 }

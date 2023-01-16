@@ -12,10 +12,10 @@ const LogIn = (props) => {
     let a=document.getElementById("Password1").value;
     let p=document.getElementById("Password2").value;
     let c=document.getElementById("Email1").value;
-    let b = document.getElementById('ale');
+    let b =document.getElementById('ble');
     let x=props.eml(c);
     if(a!==p){
-      setSuccess('warning');
+      setSuccess('danger');
       b.textContent="OOPS! Password dont match";
       b.style.display="block";
      setTimeout(()=>{
@@ -23,14 +23,14 @@ const LogIn = (props) => {
    },2000);
     }
     else if(a1==="" ||a2===""||a===""||p===""||c===""){
-      setSuccess('warning');
+      setSuccess('danger');
       b.textContent="OOPS! Fill All The Field";
       b.style.display="block";
      setTimeout(()=>{
      b.style.display="none";
    },2000);}
    else if(x===0){
-    setSuccess('warning');
+    setSuccess('danger');
     b.textContent="OOPS! Enter valid Email";
     b.style.display="block";
    setTimeout(()=>{
@@ -129,7 +129,7 @@ const LogIn = (props) => {
                 <label className="form-label">Confirm Password</label>
                 <input type="password" className="form-control" id="Password2"/>
               </div>
-              <span className={`text-center text-${success}`} id='ale' style={{display:'none'}}></span>
+              <div className={`text-center text-${success}`} id='ble' style={{display:'none'}}></div>
               <button className="mt-2 btn btn-primary" onClick={submit}>Submit</button>
             </form>
             
