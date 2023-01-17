@@ -90,18 +90,23 @@ h6{
 
 @media screen and (max-width:800px){
     .form{
+        margin-top: -100px;
         position: initial;
-        margin-left: 50px;
+        margin-left: 95px;
         margin-right: 20px;
         width: 320px;
     }
+    .see{
+        font-size: 22px;
+    }
     #sub i{
         margin-left: 10px;
+        font-size: 30px;
     }
     #sup{
         margin-top: -10px;
         position: initial;
-        padding-bottom: 20px;
+        padding-bottom: 10px;
     }
     #sup button{
         margin-top: 10px;
@@ -109,9 +114,14 @@ h6{
         width: 50%;
     }
     .bord{
+        margin-top: -120px !important;
         width: 350px;
-        margin-left: 25px;
+        margin-left: 95px;
     }
+    .supbtn{
+        height: 50px;
+    }
+    
 }
 #ale{
     height: 40px;

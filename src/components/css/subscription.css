@@ -39,3 +39,24 @@
     border-radius: 3px;
     margin-bottom: 20px;
 }
+@media screen and (max-width:800px){
+    #hii{
+          margin-left: 0;
+    }
+    #i1 ,#i2, #i3{
+        width: 300px;
+        margin-left: 60px;
+        margin-bottom: 30px;
+        margin-top: -20px;
+    }
+    #i2,#i3{
+        margin-top: 20px;
+    }
+    .rs{
+        margin-left: 40px;
+    }
+    #hii a{
+        margin-left: 30px;
+        margin-top: 40px;
+    }
+}

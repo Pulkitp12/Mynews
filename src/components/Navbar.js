@@ -30,7 +30,7 @@ const Navbar = (props)=> {
                         <Link className="nav-link mnt" to="/about" onClick={active}><i className="fa fa-fw fa-play-circle" style={{color: 'red'}}></i>Live</Link>
                         </li>
                         <li className="nav-item dropdown nv">
-                        <a className="nav-link dropdown-toggle mnt" href="/" role="button" data-bs-toggle="dropdown" aria-expanded="false" onClick={active}>
+                        <a className="nav-link dropdown-toggle mnt" id='open' href="/" role="button" data-bs-toggle="dropdown" aria-expanded="false" onClick={active}>
                         <i className="fa fa-fw fa-bars"></i>
                         </a>
                         <ul className="dropdown-menu">
@@ -44,13 +44,13 @@ const Navbar = (props)=> {
                     <li className="nav-item dropdown" id="lgnn" style={props.mode==='light'?{color:'black'}:{color:'white'}}>
                     <a href='/' className="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false" ><i className="fa fa-x fa-user-circle-o" aria-hidden="true" /></a>
                     <ul className="dropdown-menu px-3 py-3">
-                    <li className='py-2 text-center'><h5>Account Info</h5></li>
+                    <li className='py-2 text-center'><h3>Account Info</h3></li>
                             <li className='py-2'><h5>Username :</h5>  <p>{localStorage.getItem("fullName").toUpperCase()}</p></li>
                             
                             <li className='py-2'><h5>Subscription :</h5>  <p>Not subscribed</p></li>
                             
                             <li className='py-2'><h5>Email :</h5>  <p>{localStorage.getItem("Email")}</p></li>
-                            
+                            <li><hr/></li>
                             <li className='py-2 text-center'><a href="/" onClick={props.diblrev} id="sout">Sign Out</a></li>
                         </ul>
                         </li>

@@ -1,0 +1,16 @@
+@media screen and (max-width:800px){
+    .ctus{
+        margin-top: 70px;
+    }
+    .ctfrm{
+        margin-bottom: 30px;
+    }
+    .ctfrm button{
+        margin-left: 60px !important;
+    }
+
+}
+.ctfrm button{
+    margin-left: 155px;
+    width: 250px;
+}

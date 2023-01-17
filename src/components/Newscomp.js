@@ -25,7 +25,6 @@ const NewsComp=(props)=>{
         setLoading(true);
         let data = await fetch(url);
         let parseData= await data.json();
-        console.log(parseData);
         setArticles(parseData.articles);
         setTotalResults(parseData.totalResults);
         setLoading(false);

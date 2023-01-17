@@ -98,7 +98,7 @@ const LogIn = (props) => {
         <button className='btn btn-md btn-success mt-4' id='lgn' onClick={add}>LOGIN</button>
         <div className='d-flex justify-content-between my-3 py-3'>
          <h4>Don't have an Account  &#8688;</h4>
-        <button onClick={show} className="btn btn-md btn-primary">SignUp</button>
+        <button onClick={show} className="btn btn-md btn-primary supbtn">SignUp</button>
         </div>
         <span className='mt-3'><h2 className='text-center'>Log In With</h2></span>
         <div className='my-4' id='icns'>
@@ -112,7 +112,7 @@ const LogIn = (props) => {
       </div>
       <div className='col-md-2'></div>
       <div className='col-md-4 bord' id="sup" style={props.mode==='light'?{color:'black',backgroundColor:'white',border: '3px solid black'}:{color:'white',backgroundColor:'black',border: '3px solid white'}}><h1 className='text-center'>SignUp</h1>
-      <form className='px-2 py-3'>
+      <form className='px-2 py-3 supform'>
                 <div className="mb-3">
                 <label className="form-label">First Name</label>
                 <input type="text" id='a1' className="form-control" aria-describedby="emailHelp"/>

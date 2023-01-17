@@ -16,3 +16,14 @@
 h1{
     cursor:default;
 }
+@media screen and (max-Width:800px){
+    .main{
+        margin-left: 120px;
+    }   
+    #time{
+        display: none;
+    }
+    #clock{
+        font-size: 20px;
+    }
+}
