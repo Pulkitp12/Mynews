@@ -12,3 +12,6 @@
 .titl{
     height: 100px;
 }
+.btn:hover{
+    background-color: rgb(39, 160, 204);
+}

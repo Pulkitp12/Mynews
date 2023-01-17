@@ -4,8 +4,12 @@
 .nv{
     margin-left: 20px;
 }
+.navbar{
+    height: 50px;
+}
 .navbar a:hover{
     background-color: gainsboro;
+    color: black;
 }
 @media screen and (max-width:800px){
     
@@ -32,16 +36,15 @@
 #lgnn{
     position: fixed;
     right: 170px;
-    margin-top: 17px;
+    margin-top: 6px;
     top: 0;
     font-size: 25px;
     display: none;
-    color: rgb(24, 28, 248);
 }
 #sout{
    font-size: 20px;
    text-decoration: none;
 }
-nav a.active{
-    background-color: gainsboro;
+.title{
+    cursor:default;
 }

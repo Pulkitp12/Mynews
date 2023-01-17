@@ -13,7 +13,7 @@ const NewsComp=(props)=>{
 
  const fetchMoreData = async() => {
  setPage(page+1); 
- let url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=678199a0060c47d7894ab4f1f82a3d23&page=${page+1}&pagesize=${props.pagesize}`;
+ let url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apikey}&page=${page+1}&pagesize=${props.pagesize}`;
         let data = await fetch(url);
         let parseData= await data.json();
         setArticles(articles.concat(parseData.articles));
@@ -21,7 +21,7 @@ const NewsComp=(props)=>{
 }
 
    const upDate= async()=>{
-    let url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=678199a0060c47d7894ab4f1f82a3d23&page=${page}&pagesize=${props.pagesize}`;
+    let url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apikey}&page=${page}&pagesize=${props.pagesize}`;
         setLoading(true);
         let data = await fetch(url);
         let parseData= await data.json();
@@ -33,11 +33,13 @@ const NewsComp=(props)=>{
     useEffect(()=>{
         upDate();
     },[]);
-   
-  
+    setInterval(()=>{
+      let date=new Date();
+      document.getElementById('clock').innerHTML=date.getHours() + ':'+ date.getMinutes() +':'+date.getSeconds()
+    },1000);
     return (
       <div className='mt-5 py-3 newcom'>
-            <div className="main" style={props.mode==='light'?{color:'black'}:{color:'white'}}>
+            <div className="main" style={props.mode==='light'?{color:'black'}:{color:'white'}}><span id='time'><i className="fa fa-fw fa-2x fa-clock-o"></i><span id='clock'></span></span>
              <h1 className='text-center'>{props.category?props.category.toUpperCase():"TOP HEADLINES"}</h1>
                {loading && <Loader/>}
                               <InfiniteScroll

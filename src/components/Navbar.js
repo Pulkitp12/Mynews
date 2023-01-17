@@ -7,24 +7,27 @@ const Navbar = (props)=> {
     let mnit= document.getElementsByClassName('mnt');
     for(let i=0;i<mnit.length;i++){
       mnit[i].style.backgroundColor="";
+      mnit[i].style.color="";
     }
     e.currentTarget.style.backgroundColor="gainsboro";
+    e.currentTarget.style.color="black";
   }
+  
     return (
       <div>
         <nav className= {`navbar navbar-expand-lg fixed-top navbar-${props.mode} bg-${props.mode==='light'?'light':'dark'}`} >
             <div className="container-fluid">
-            <span className="navbar-brand fs-3 px-3"><i className="fa fa-x fa-newspaper-o"></i> NEWSHALA</span>
+            <span className="navbar-brand fs-3 px-3 title"><i className="fa fa-x fa-newspaper-o"></i> NEWSHALA</span>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                     </button>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav me-auto mb-lg-0 ">
                         <li className="nav-item nv">
-                        <Link className="nav-link mnt" aria-current="page" to="/" onClick={active} style={{backgroundColor:"gainsboro"}}><i className="fa fa-fw fa-home"></i>Top Headlines</Link>
+                        <Link className="nav-link mnt" aria-current="page" to="/" onClick={active}><i className="fa fa-fw fa-home"></i>Top Headlines</Link>
                         </li>
                         <li className="nav-item nv">
-                        <Link className="nav-link mnt" to="/about" onClick={active}><i className="fa fa-fw fa-bandcamp" style={{color: 'red'}}></i>Live</Link>
+                        <Link className="nav-link mnt" to="/about" onClick={active}><i className="fa fa-fw fa-play-circle" style={{color: 'red'}}></i>Live</Link>
                         </li>
                         <li className="nav-item dropdown nv">
                         <a className="nav-link dropdown-toggle mnt" href="/" role="button" data-bs-toggle="dropdown" aria-expanded="false" onClick={active}>
@@ -38,7 +41,7 @@ const Navbar = (props)=> {
                         </ul>
                         </li>
                     </ul>
-                    <li className="nav-item dropdown" id="lgnn">
+                    <li className="nav-item dropdown" id="lgnn" style={props.mode==='light'?{color:'black'}:{color:'white'}}>
                     <a href='/' className="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false" ><i className="fa fa-x fa-user-circle-o" aria-hidden="true" /></a>
                     <ul className="dropdown-menu px-3 py-3">
                     <li className='py-2 text-center'><h5>Account Info</h5></li>

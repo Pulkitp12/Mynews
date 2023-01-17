@@ -18,6 +18,7 @@ const Side=(props)=> {
       let i=0;
       while(i<a.length){
         a[i].style.backgroundColor="";
+        a[i].style.color="";
         i=i+1;
       }
       e.currentTarget.style.backgroundColor="gainsboro";
