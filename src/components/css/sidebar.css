@@ -1,0 +1,8 @@
+.sidebar{
+    position: fixed;
+    z-index: 5;
+}
+.element{
+    margin-top: 50px;
+    font-size: 20px;
+}

@@ -3,7 +3,13 @@ import '../components/css/navbar.css';
 import {Link}  from "react-router-dom";
 
 const Navbar = (props)=> {
-  
+  const active=(e)=>{
+    let mnit= document.getElementsByClassName('mnt');
+    for(let i=0;i<mnit.length;i++){
+      mnit[i].style.backgroundColor="";
+    }
+    e.currentTarget.style.backgroundColor="gainsboro";
+  }
     return (
       <div>
         <nav className= {`navbar navbar-expand-lg fixed-top navbar-${props.mode} bg-${props.mode==='light'?'light':'dark'}`} >
@@ -15,13 +21,13 @@ const Navbar = (props)=> {
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav me-auto mb-lg-0 ">
                         <li className="nav-item nv">
-                        <Link className="nav-link" aria-current="page" to="/"><i className="fa fa-fw fa-home"></i>Home</Link>
+                        <Link className="nav-link mnt" aria-current="page" to="/" onClick={active} style={{backgroundColor:"gainsboro"}}><i className="fa fa-fw fa-home"></i>Top Headlines</Link>
                         </li>
                         <li className="nav-item nv">
-                        <Link className="nav-link" to="/about"><i className="fa fa-fw fa-bandcamp" style={{color: 'red'}}></i>Live</Link>
+                        <Link className="nav-link mnt" to="/about" onClick={active}><i className="fa fa-fw fa-bandcamp" style={{color: 'red'}}></i>Live</Link>
                         </li>
                         <li className="nav-item dropdown nv">
-                        <a className="nav-link dropdown-toggle" href="/" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a className="nav-link dropdown-toggle mnt" href="/" role="button" data-bs-toggle="dropdown" aria-expanded="false" onClick={active}>
                         <i className="fa fa-fw fa-bars"></i>
                         </a>
                         <ul className="dropdown-menu">

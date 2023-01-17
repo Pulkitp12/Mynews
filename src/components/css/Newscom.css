@@ -1,12 +1,4 @@
-.sidebar{
-    position: fixed;
-    z-index: 5;
-}
 .main{
     margin-top: 10px;
     margin-left: 200px;
-}
-.element{
-    margin-top: 50px;
-    font-size: 20px;
 }
