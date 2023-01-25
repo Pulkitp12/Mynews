@@ -47,7 +47,7 @@ const NewsComp=(props)=>{
                             hasMore={articles.length<totalResults}
                             loader={<Loader></Loader>}>
                         <div className='container '>
-                      <div className='row mt-3'>
+                      <div className='row mt-3 abc'>
                       {articles.map((element)=>{
                               return <div className="col-sm-4 my-4" key={element.url} style={{color:'black'}}>
                               <News title={element.title?element.title.substr(0,80) + "...":""} description={element.description?element.description.substr(0,80) + "...":""} imageUrl={element.urlToImage?element.urlToImage:""} newsUrl={element.url?element.url:""} date={element.publishedAt} source={element.source.name}/>

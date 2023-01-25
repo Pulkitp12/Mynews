@@ -42,7 +42,7 @@ const Navbar = (props)=> {
                         </li>
                     </ul>
                     <li className="nav-item dropdown" id="lgnn" style={props.mode==='light'?{color:'black'}:{color:'white'}}>
-                    <a href='/' className="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false" ><i className="fa fa-x fa-user-circle-o" aria-hidden="true" /></a>
+                    <a href='/' className="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i className="fa fa-x fa-user-circle-o" aria-hidden="true" /></a>
                     <ul className="dropdown-menu px-3 py-3">
                     <li className='py-2 text-center'><h3>Account Info</h3></li>
                             <li className='py-2'><h5>Username :</h5>  <p>{localStorage.getItem("fullName").toUpperCase()}</p></li>
