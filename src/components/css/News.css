@@ -12,10 +12,29 @@
 .titl{
     height: 100px;
 }
-.btn:hover{
-    background-color: rgb(39, 160, 204);
+.btn{
+    transform: scaleX(0);
+    transition: transform 500ms;
 }
-@media screen and (max-Width:1200px){
+.btn:hover{
+    background-color: rgb(95, 188, 221);
+}
+.card:hover img{
+     opacity: 0.6;
+}
+.card:hover p{
+     opacity: 0.4;
+}
+.card:hover h5{
+    opacity: 0.4;
+}
+.card:hover .btn{
+     opacity: 1 !important;
+     transform:scaleX(1.2);
+     display:inline-block;
+}
+
+@media screen and (max-Width:1100px){
     .card{
         width: 42rem;
     }   
@@ -24,7 +43,7 @@
     }
 }
 
-@media screen and (max-Width:900px){
+@media screen and (max-Width:820px){
     .card{
         width: 32rem;
     }   
@@ -34,10 +53,10 @@
 }
 @media screen and (max-Width:700px){
     .card{
-        width: 20rem;
-        margin-left: 35px;
+        width: 17rem;
+        margin-left: -10px;
     }   
     .card a{
-        margin-left: 80px;
+        margin-left: 60px;
     }
 }
