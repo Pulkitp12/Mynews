@@ -52,6 +52,7 @@ const Navbar = (props)=> {
                             <li className='py-2'><h5>Email :</h5>  <p>{localStorage.getItem("Email")}</p></li>
                             <li><hr/></li>
                             <li className='py-2 text-center'><a href="/" onClick={props.diblrev} id="sout">Sign Out</a></li>
+                         
                         </ul>
                         </li>
                     <div className="form-check form-switch">
