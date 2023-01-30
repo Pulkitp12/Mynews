@@ -22,6 +22,7 @@ const Side=(props)=> {
         i=i+1;
       }
       e.currentTarget.style.backgroundColor="gainsboro";
+  
     }
   
   return (

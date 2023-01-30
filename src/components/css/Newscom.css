@@ -18,8 +18,8 @@ h1{
 }
 @media screen and (max-Width:1200px){
     .main{
-        margin-left: 120px;
-        display: flexbox;
+        margin-left: 10px;
+        display: grid;
     }   
     #time{
         display: none;

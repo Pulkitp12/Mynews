@@ -7,7 +7,7 @@ import About from './components/About';
 import {
   BrowserRouter as Router,
   Routes,
-  Route 
+  Route, 
 } from "react-router-dom";
 import { useState } from 'react';
 import Subscription from './components/Subscription';
@@ -17,8 +17,8 @@ import Side from './components/Side';
 
 const App=()=>{
   const pagesize=9;
-  // const apikey2= process.env.REACT_APP_API_KEY;
-  const apikey = process.env.REACT_APP_API_KEY;
+  const apikey= process.env.REACT_APP_API_KEY2;
+  // const apikey = process.env.REACT_APP_API_KEY;
   const [mode, setMode]= useState('light')
   const toggleMode = () => {
   if (mode==='light')
@@ -29,6 +29,7 @@ const App=()=>{
     document.body.style.backgroundColor="white";
   }
 }
+
 const dibl=()=>{
   let a= document.getElementById('lgn');
   let b= document.getElementById('lgnn');

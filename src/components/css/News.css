@@ -14,7 +14,7 @@
 }
 .btnrm{
     transform: scaleX(0);
-    transition: transform 500ms;
+    transition: transform 300ms;
 }
 .btnrm:hover{
     background-color: rgb(95, 188, 221);
@@ -34,9 +34,9 @@
      display:inline-block;
 }
 
-@media screen and (max-Width:1100px){
+@media screen and (max-Width:1200px){
     .card{
-        width: 42rem;
+        width: 40rem;
     }   
     .card a{
         margin-left: 250px;
