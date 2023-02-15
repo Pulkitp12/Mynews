@@ -1,18 +1,141 @@
-
-iframe{
-    margin-left: 40px;
-    margin-top: 50px;
-    box-shadow: rgba(24, 99, 221, 0.71) 2px 8px 15px;
+body{
+    overflow-x: hidden;
 }
 @media screen and (max-width:800px) {
-    iframe{
-        margin-left: 10px;
-        margin-right: 10px;
-        margin-top: 20px;
-        height:200px;
-        width: 100%;
-    }
     .hey1{
         padding-top: 20px;
     }
+}
+.thun{
+    position: absolute;
+    right: 430px;
+    top: 150px;
+    background: url(../thun.gif);
+    height: 150px;
+    width: 80px;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.thun2{
+    position: absolute;
+    right: 10px;
+    top: 150px;
+    background: url(../thun.gif);
+    height: 150px;
+    width: 80px;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.data{
+    padding-top: 50px;
+    padding-bottom: 50px;
+    width: 400px;
+    margin-left: 20px;
+    height: 550px;
+}
+.crds{
+    position: absolute;
+    right: 50px;
+    top: 200px;
+}
+.data2{
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 50px;
+    bottom: 65px;
+    width: 400px;
+    height: 150px;
+    border-radius: 30px;
+    display: none;
+}
+.imag{
+    position: absolute;
+    top: 20px;
+    width: 40px;
+    height: 40px;
+    animation: move 10s linear infinite;
+}
+.imag1{
+    position: absolute;
+    top: 35px;
+    width: 40px;
+    height: 40px;
+    animation: move 14s linear infinite;
+}
+.imag2{
+    position: absolute;
+    top: 80px;
+    width: 40px;
+    height: 40px;
+    animation: move 6s linear infinite;
+}
+.imag3{
+    position: absolute;
+    top: 7px;
+    width: 40px;
+    height: 40px;
+    animation: move 8s linear infinite;
+}
+.imag4{
+    position: absolute;
+    top: 90px;
+    width: 40px;
+    height: 40px;
+    animation: move 18s linear infinite;
+}
+@keyframes move {
+    0%{
+        left: -2%;
+    }
+    
+    100%{
+        left: 86%;
+    }
+    
+}
+.weatype{
+   margin-top: 50px;
+}
+.incorr{
+    color: red;
+    display: none;
+}
+.allinfo{
+    margin-left: 20px;
+    margin-right: 20px;
+    height: 60px;
+    margin-top: 80px;
+    padding-top: 15px;
+}
+.astro{
+    position: absolute;
+    left: 520px;
+    top: 26.5%;
+    height: 507px;
+    width: 450px;
+    border-radius: 10px;
+}
+.fore{
+    margin-left: 20px;
+    margin-right: 20px;
+    height: 200px;
+}
+#image1,#image2,#image3,#image4,#image5,#image6{
+    height: 90px;
+    width: 100px;
+}
+figcaption{
+    font-size: 20px;
+}
+#forecas{
+    display: none;
+}
+.maincontent span{
+    font-weight: 350;
+    font-size: 20px;
+}
+.fw{
+    font-weight: 300;
 }

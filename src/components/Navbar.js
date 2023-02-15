@@ -27,7 +27,7 @@ const Navbar = (props)=> {
                         <Link className="nav-link mnt" aria-current="page" to="/" onClick={active}><i className="fa fa-fw fa-home"></i>Top Headlines</Link>
                         </li>
                         <li className="nav-item nv">
-                        <Link className="nav-link mnt" to="/about" onClick={active}><i className="fa fa-fw fa-play-circle" style={{color: 'red'}}></i>Live</Link>
+                        <Link className="nav-link mnt" to="/about" onClick={active}><i className="fa fa-fw fa-cloud"></i>Weather</Link>
                         </li>
                         <li className="nav-item dropdown nv">
                         <a className="nav-link dropdown-toggle mnt" id='open' href="/" role="button" data-bs-toggle="dropdown" aria-expanded="false" onClick={active}>

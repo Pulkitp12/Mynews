@@ -5,7 +5,7 @@ const News =(props)=> {
    
     return (
       <div>
-        <div className="card pt-3" style={props.mode==='light'?{boxShadow: '10px 10px 10px 0px rgb(13, 13, 14)'}:{boxShadow: '8px 8px 8px 0px silver'}}>
+        <div className="card cards" style={props.mode==='light'?{boxShadow: '10px 10px 10px 0px rgb(13, 13, 14)'}:{boxShadow: '8px 8px 8px 0px silver'}}>
             <img src={props.imageUrl?props.imageUrl:"https://img.freepik.com/free-vector/blue-breaking-news-tv-background_1017-14201.jpg?w=996&t=st=1672161378~exp=1672161978~hmac=94e4562b5fc0f90710411e886be8b780e60abb9a1437231282d9c837e9251fdf"} className="card-img-top" alt="..."/>
                 <div className="card-body">
                    <div><p className="card-text"><small className="text-muted ">Source : {props.source}</small></p></div>
@@ -13,7 +13,7 @@ const News =(props)=> {
                    <div className='desc'><p className="card-text">{props.description}</p></div>
                    <div><p className="card-text"><small className="text-muted">{new Date(props.date).toGMTString()}</small></p></div>
                     <hr/>
-                    <div>  <a href={props.newsUrl} target="_blank" rel="noreferrer" className="btn btn-primary btnrm">READ MORE</a></div>
+                    <div><a href={props.newsUrl} target="_blank" rel="noreferrer" className="btn btn-primary btnrm">READ MORE</a></div>
                 </div>
         </div>
       </div>

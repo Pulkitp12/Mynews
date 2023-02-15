@@ -1,6 +1,6 @@
 .main{
     margin-top: 10px;
-    margin-left: 200px;
+    padding-left: 200px;
 }
 #clock{
     font-size: 25px;
@@ -66,4 +66,5 @@ h1{
     .abc{
         display: grid;
 }
+
 }

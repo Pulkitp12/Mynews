@@ -39,7 +39,7 @@ const NewsComp=(props)=>{
     return (
       <div className='mt-5 py-3 newcom'>
             <div className="main" style={props.mode==='light'?{color:'black'}:{color:'white'}}><span id='time'><i className="fa fa-fw fa-2x fa-clock-o"></i><span id='clock'></span></span>
-             <h1 className='text-center'>{props.category?props.category.toUpperCase():"TOP HEADLINES"}</h1>
+             <h1 className='text-center' style={props.mode==='light'?{color:'black'}:{color:'white'}}>{props.category?props.category.toUpperCase():"TOP HEADLINES"}</h1>
                {loading && <Loader/>}
                               <InfiniteScroll
                             dataLength={articles.length}
