@@ -1,11 +1,12 @@
 import React from 'react';
 import '../components/css/about.css';
+import CanvasJSReact from '../canvasjs.react';
+var CanvasJS = CanvasJSReact.CanvasJS;
 
-const About = (props)=> {
+const About = (props)=> {           
             const fetchData = async() => {
-                let a = document.getElementById('texts').value;
-            //let url = `http://api.weatherstack.com/current?access_key=a01d3f01eaac2b10dee9b3ef6def5f35&query=NewYork&Access-Control-Allow-Origin`;
-            let url = `http://api.weatherapi.com/v1/forecast.json?key=06504f79ccea494397191802231402&q=${a}&days=6&aqi=no&alerts=no`;
+             let a = document.getElementById('texts').value;
+             let url = `http://api.weatherapi.com/v1/forecast.json?key=06504f79ccea494397191802231402&q=${a}&days=6&aqi=yes&alerts=no`;
              let data = await fetch(url);
              let parseData= await data.json(); 
              if(parseData.error){
@@ -31,10 +32,20 @@ const About = (props)=> {
                     document.getElementById('moons').textContent="";
                     document.getElementById('moonp').textContent="";
                     document.getElementById('mooni').textContent="";
-                document.querySelector(".incorr").style.display="block";
+                    document.getElementById('CO').textContent="";
+                    document.getElementById('NO').textContent="";
+                    document.getElementById('O').textContent="";
+                    document.getElementById('SO').textContent="";
+                    document.getElementById('PM2').textContent="";
+                    document.getElementById('PM10').textContent="";
+                    document.getElementById('EPA').textContent="";
+                    document.querySelector(".graph").style.display="none";
+                    document.querySelector(".barg").style.display="none";
+                    document.querySelector(".mixgraph").style.display="none";
+                document.querySelector(".incorr").style.visibility="visible";
                 setTimeout(()=>{
-                    document.querySelector(".incorr").style.display="none";
-                },5000)
+                    document.querySelector(".incorr").style.visibility="hidden";
+                },3000)
              }
              else{
                 document.getElementById('Pr').textContent=parseData.current.pressure_mb + " millibar";
@@ -52,6 +63,13 @@ const About = (props)=> {
                 else{
                     clds = "Yes"
                 }
+                document.getElementById('CO').textContent=parseData.current.air_quality.co;
+                document.getElementById('NO').textContent=parseData.current.air_quality.no2;
+                document.getElementById('O').textContent=parseData.current.air_quality.o3;
+                document.getElementById('SO').textContent=parseData.current.air_quality.so2;
+                document.getElementById('PM2').textContent=parseData.current.air_quality.pm2_5;
+                document.getElementById('PM10').textContent=parseData.current.air_quality.pm10;
+                document.getElementById('EPA').textContent=parseData.current.air_quality["us-epa-index"];
                 document.getElementById('C').textContent=clds;
                 document.getElementById('RF').textContent=parseData.current.precip_mm + " mm";
                 document.getElementById('UV').textContent=parseData.current.uv;
@@ -87,12 +105,145 @@ const About = (props)=> {
                 document.getElementById('rainch').textContent=parseData.forecast.forecastday[0].day.daily_chance_of_rain===0?"No":"Yes";
                  document.getElementById('forecas').style.display="block";
                 document.getElementById('dta').style.display="block";
+                Showgraph();
+                const Bargraph=()=>{
+                    let mintem = parseData.forecast.forecastday[0].day.mintemp_c;
+                    let maxtem = parseData.forecast.forecastday[0].day.maxtemp_c;
+                    var chart =new CanvasJS.Chart("barg",{
+                      height: 370,
+                      width: 370,
+                      animationEnabled: true,
+                      exportEnabled: true,
+                      theme: `${props.mode+"1"}`, // "light1", "dark1", "dark2"
+                      title:{
+                          text: "Daily Temperature Variation"
+                      },
+                      axisY: {
+                          title: "Temperature",
+                          suffix: " degree C"
+                      },
+                      axisX: {
+                          title: "Today",
+                      },
+                      data: [{
+                          type: "bar",
+                          dataPoints: [
+                              { x: 1, y: mintem },
+                              { x: 2, y: maxtem }        
+                          ]
+                      }]});
+                      chart.render();
+                }
+                const mgraph=()=>{
+                    let h2 = parseData.forecast.forecastday[1].day.maxwind_kph;
+                    let h3 = parseData.forecast.forecastday[2].day.maxwind_kph;
+                    let h1 = parseData.forecast.forecastday[0].day.maxwind_kph;
+                    let h4 = parseData.forecast.forecastday[3].day.maxwind_kph;
+                    let h5 = parseData.forecast.forecastday[4].day.maxwind_kph;
+                    let h6 = parseData.forecast.forecastday[5].day.maxwind_kph;
+                    let w1 = parseData.forecast.forecastday[0].hour[19].gust_kph;
+                    let w2 = parseData.forecast.forecastday[1].hour[19].gust_kph;
+                    let w3 = parseData.forecast.forecastday[2].hour[19].gust_kph;
+                    let w4 = parseData.forecast.forecastday[3].hour[19].gust_kph;
+                    let w5 = parseData.forecast.forecastday[4].hour[19].gust_kph;
+                    let w6 = parseData.forecast.forecastday[5].hour[19].gust_kph;
+                    var chart =new CanvasJS.Chart("mgraph",{
+                      height: 370,
+                      width: 800,
+                      animationEnabled: true,
+                      exportEnabled: true,
+                      theme: `${props.mode+"1"}`, // "light1", "dark1", "dark2"
+                      title:{
+                          text: "Weekly Wind & Gust Variation"
+                      },
+                      axisY: {
+                          title: "Wind",
+                          suffix: "Kmph"
+                      },
+                      axisX: {
+                          title: "Days",
+                      },
+                      data: [{
+                          type: "spline",
+                          name: "wind",
+					      showInLegend: true,
+                          dataPoints: [
+                              { x: 1, y: h1 },
+                              { x: 2, y: h2 },
+                              { x: 3, y: h3 },
+                              { x: 4, y: h4 },
+                              { x: 5, y: h5 },
+                              { x: 6, y: h6 }        
+                          ]
+                      },{
+                        type: "spline",
+                        name: "gust",
+				    	showInLegend: true,
+                          dataPoints: [
+                              { x: 1, y: w1 },
+                              { x: 2, y: w2 },
+                              { x: 3, y: w3 },
+                              { x: 4, y: w4 },
+                              { x: 5, y: w5 },
+                              { x: 6, y: w6 }        
+                          ]
+                      }]});
+                      chart.render();
+                }
+                mgraph();
+                Bargraph();
+                document.querySelector(".graph").style.display="block";
+                document.querySelector(".barg").style.display="block";
+                document.querySelector(".mixgraph").style.display="block";
                  let icn = document.querySelectorAll("img");
                  for(let i=0;i<icn.length;i++){
                  icn[i].src = parseData.current.condition.icon;
                 }
              }
            }
+           var tem1,tem2,tem3,tem4,tem5,tem6;
+          const Showgraph=()=>{
+              let temp1 = document.getElementById('day1').textContent.split('/')[1];
+              tem1 = Number(temp1.split('o')[0]);
+              let temp2 = document.getElementById('day2').textContent.split('/')[1];
+              tem2 = Number(temp2.split('o')[0]);
+              let temp3 = document.getElementById('day3').textContent.split('/')[1];
+              tem3 = Number(temp3.split('o')[0]);
+              let temp4 = document.getElementById('day4').textContent.split('/')[1];
+              tem4 = Number(temp4.split('o')[0]);
+              let temp5 = document.getElementById('day5').textContent.split('/')[1];
+              tem5 = Number(temp5.split('o')[0]);
+              let temp6 = document.getElementById('day6').textContent.split('/')[1];
+              tem6 = Number(temp6.split('o')[0]);
+              var chart =new CanvasJS.Chart("graph",{
+                height: 285,
+                width: 800,
+                animationEnabled: true,
+                exportEnabled: true,
+                theme: `${props.mode+"1"}`, // "light1", "dark1", "dark2"
+                title:{
+                    text: "Weekly Temperature Variation"
+                },
+                axisY: {
+                    title: "Temperature",
+                    suffix: " degree C"
+                },
+                axisX: {
+                    title: "Days",
+                },
+                data: [{
+                    type: "line",
+                    dataPoints: [
+                        { x: 1, y: tem1 },
+                        { x: 2, y: tem2 },
+                        { x: 3, y: tem3 },
+                        { x: 4, y: tem4 },
+                        { x: 5, y: tem5 },
+                        { x: 6, y: tem6 }           
+                    ]
+                }]});
+                chart.render();
+          }
           
     return (
     <div id='divi'>
@@ -121,7 +272,7 @@ const About = (props)=> {
                 <div className="card-body"> <h5 className='text-center'>Enter Your City below</h5>
                 <input type="text" className="mt-4 form-control" id="texts" placeholder="Enter Your City..."/>
                 <div className='incorr text-center mt-2'><h5>Enter Proper City Name</h5></div>
-                <button className="btn btn-lg btn-info mt-5 form-control" onClick={fetchData}>Check</button>
+                <button className="btn btn-lg btn-info mt-2 form-control" onClick={fetchData}>Check</button>
                 </div>
             </div>
             <div className='data2 text-center' id="dta" style={props.mode==='light'?{color:'black',border:'2px solid black',backgroundColor:'aliceblue'}:{color:'white',border:'2px solid white',backgroundColor:'rgb(2, 2, 10)'}}>
@@ -176,6 +327,49 @@ const About = (props)=> {
                         <figcaption className="fw text-center" id='day6'></figcaption>
                         </figure>
                 </div>
+            </div>
+            <div className='my-3 furtdata d-flex justify-content-between'>
+                <div className='airq' style={props.mode==='light'?{color:'black',border:'1px solid black',backgroundColor:'aliceblue'}:{color:'white',border:'1px solid white',backgroundColor:'rgb(2, 2, 10)'}}>
+                    <h2 className='text-center'>Air Quality</h2>
+                        <ul>
+                        <li className="d-flex justify-content-between align-items-center">
+                        <h4>CO</h4>
+                            <span className="" id='CO'></span>
+                        </li>
+                        <li className="d-flex justify-content-between align-items-center">
+                            <h4>NO<sub>2</sub></h4>
+                            <span className="fw2" id='NO'></span>
+                        </li>
+                        <li className="d-flex justify-content-between align-items-center">
+                        <h4>SO<sub>2</sub></h4>
+                            <span className="fw2" id='SO'></span>
+                        </li>
+                        <li className="d-flex justify-content-between align-items-center">
+                        <h4>O<sub>3</sub></h4>
+                            <span className="fw2" id='O'></span>
+                        </li>
+                        <li className="d-flex justify-content-between align-items-center">
+                        <h4>Particulate Matter<sub>2.5</sub></h4>
+                            <span className="fw2" id='PM2'></span>
+                        </li>
+                        <li className="d-flex justify-content-between align-items-center">
+                        <h4>Particulate Matter<sub>10</sub></h4>
+                            <span className="fw2" id='PM10'></span>
+                        </li>
+                        <li className="d-flex justify-content-between align-items-center">
+                        <h4>US EPA index </h4>
+                            <span className="fw2" id='EPA'></span>
+                        </li>
+                        </ul>
+                </div>
+              <div className='graph px-3 py-3' id='graph' style={props.mode==='light'?{color:'black',border:'1px solid black',backgroundColor:'aliceblue'}:{color:'white',border:'1px solid white',backgroundColor:'rgb(2, 2, 10)'}}>
+                
+                </div>
+            </div>
+            <div className='d-flex justify-content-between final my-3'>
+               <div className='barg px-3 py-3' id='barg' style={props.mode==='light'?{color:'black',border:'1px solid black',backgroundColor:'aliceblue'}:{color:'white',border:'1px solid white',backgroundColor:'rgb(2, 2, 10)'}}></div>
+            
+            <div className='mixgraph px-3 py-3' id='mgraph' style={props.mode==='light'?{color:'black',border:'1px solid black',backgroundColor:'aliceblue'}:{color:'white',border:'1px solid white',backgroundColor:'rgb(2, 2, 10)'}}></div>
             </div>
     </div>
     )

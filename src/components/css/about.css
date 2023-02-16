@@ -100,7 +100,7 @@ body{
 }
 .incorr{
     color: red;
-    display: none;
+    visibility:hidden;
 }
 .allinfo{
     margin-left: 20px;
@@ -138,4 +138,36 @@ figcaption{
 }
 .fw{
     font-weight: 300;
+}
+.data,.data2,.astro,.allinfo,.fore{
+    cursor: default;
+}
+.furtdata{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.fw2{
+    font-weight: 450;
+}
+.airq{
+    width: 500px;
+    padding-right: 10px;
+}
+.graph{
+    width:900px;
+    display: none;
+}
+.final{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.barg{
+    height: 400px;
+    width:500px;
+    display: none;
+}
+.mixgraph{
+    width: 900px;
+    height: 400px;
+    display: none;
 }

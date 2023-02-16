@@ -17,7 +17,7 @@
 }
 .btnrm{
     transform: scaleX(0);
-    transition: transform 300ms;
+    transition: transform 200ms;
 }
 .btnrm:hover{
     background-color: rgb(95, 188, 221);
