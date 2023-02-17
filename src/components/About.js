@@ -1,14 +1,58 @@
-import React from 'react';
+import React, {useState} from 'react';
 import '../components/css/about.css';
+import Loader from '../components/Loader';
 import CanvasJSReact from '../canvasjs.react';
 var CanvasJS = CanvasJSReact.CanvasJS;
 
 const About = (props)=> {           
+    const [loading,setLoading] = useState(false);
             const fetchData = async() => {
+                if(document.getElementById('btncheck').textContent==="Clear"){
+                    document.getElementById('texts').removeAttribute("disabled");
+                    document.getElementById('Pr').textContent="";
+                    document.getElementById('Tem').textContent="";
+                    document.getElementById('WS').textContent="";
+                    document.getElementById('WD').textContent="";
+                    document.getElementById('WDI').textContent="";
+                    document.getElementById('Hu').textContent="";
+                    document.getElementById('C').textContent="";
+                    document.getElementById('RF').textContent="";
+                    document.getElementById('UV').textContent="";
+                    document.getElementById('wea').textContent="";
+                    document.getElementById('city').textContent="";
+                    document.getElementById('coun').textContent="";
+                    document.getElementById('lat').textContent="";
+                    document.getElementById('lon').textContent="";
+                    document.getElementById('dta').style.display="none";
+                    document.getElementById('forecas').style.display="none";
+                    document.getElementById('sunr').textContent="";
+                        document.getElementById('suns').textContent="";
+                        document.getElementById('moonr').textContent="";
+                        document.getElementById('moons').textContent="";
+                        document.getElementById('moonp').textContent="";
+                        document.getElementById('mooni').textContent="";
+                        document.getElementById('CO').textContent="";
+                        document.getElementById('NO').textContent="";
+                        document.getElementById('O').textContent="";
+                        document.getElementById('SO').textContent="";
+                        document.getElementById('PM2').textContent="";
+                        document.getElementById('PM10').textContent="";
+                        document.getElementById('EPA').textContent="";
+                        document.querySelector(".graph").style.display="none";
+                        document.querySelector(".barg").style.display="none";
+                        document.querySelector(".mixgraph").style.display="none";
+                        document.querySelector(".data").style.display="none";
+                    document.querySelector(".airq").style.display="none";
+                    document.querySelector(".astro").style.display="none";
+                    document.getElementById('btncheck').textContent="Check";
+                }
+              else 
+              {  setLoading(true);
              let a = document.getElementById('texts').value;
-             let url = `http://api.weatherapi.com/v1/forecast.json?key=06504f79ccea494397191802231402&q=${a}&days=6&aqi=yes&alerts=no`;
+             let url = `http://api.weatherapi.com/v1/forecast.json?key=${props.apikey}&q=${a}&days=6&aqi=yes&alerts=no`;
              let data = await fetch(url);
              let parseData= await data.json(); 
+             setLoading(false);
              if(parseData.error){
                 document.getElementById('Pr').textContent="";
                 document.getElementById('Tem').textContent="";
@@ -42,6 +86,9 @@ const About = (props)=> {
                     document.querySelector(".graph").style.display="none";
                     document.querySelector(".barg").style.display="none";
                     document.querySelector(".mixgraph").style.display="none";
+                    document.querySelector(".data").style.display="none";
+                document.querySelector(".airq").style.display="none";
+                document.querySelector(".astro").style.display="none";
                 document.querySelector(".incorr").style.visibility="visible";
                 setTimeout(()=>{
                     document.querySelector(".incorr").style.visibility="hidden";
@@ -195,12 +242,17 @@ const About = (props)=> {
                 document.querySelector(".graph").style.display="block";
                 document.querySelector(".barg").style.display="block";
                 document.querySelector(".mixgraph").style.display="block";
+                document.querySelector(".data").style.display="block";
+                document.querySelector(".airq").style.display="block";
+                document.querySelector(".astro").style.display="block";
                  let icn = document.querySelectorAll("img");
                  for(let i=0;i<icn.length;i++){
                  icn[i].src = parseData.current.condition.icon;
-                }
-             }
-           }
+                }}
+                
+             document.getElementById('btncheck').textContent="Clear"; 
+             document.getElementById('texts').setAttribute("disabled","");
+             }         }
            var tem1,tem2,tem3,tem4,tem5,tem6;
           const Showgraph=()=>{
               let temp1 = document.getElementById('day1').textContent.split('/')[1];
@@ -245,7 +297,7 @@ const About = (props)=> {
                 chart.render();
           }
           
-    return (
+    return ( 
     <div id='divi'>
         <div className='allinfo d-flex justify-content-around'  style={props.mode==='light'?{color:'black',border:'1px solid black',backgroundColor:'aliceblue'}:{color:'white',border:'1px solid white',backgroundColor:'rgb(2, 2, 10)'}}>
             <h4 className='maincontent'>City : <span id='city'></span></h4>
@@ -253,6 +305,7 @@ const About = (props)=> {
             <h4 className='maincontent'>Latitude : <span id='lat'></span></h4>
             <h4 className='maincontent'>Longitude : <span id='lon'></span></h4>
         </div>
+        {loading && <Loader/>}
             <div className='data mt-3' style={props.mode==='light'?{color:'black',border:'1px solid black',backgroundColor:'aliceblue'}:{color:'white',border:'1px solid white',backgroundColor:'rgb(2, 2, 10)'}}>  
                 <h4 className='maincontent  mx-4'>Temperature : <span className='mx-3' id="Tem"></span></h4>
                 <h4 className='maincontent my-4 mx-4'>Wind Speed : <span className='mx-3' id="WS"></span></h4>
@@ -272,7 +325,7 @@ const About = (props)=> {
                 <div className="card-body"> <h5 className='text-center'>Enter Your City below</h5>
                 <input type="text" className="mt-4 form-control" id="texts" placeholder="Enter Your City..."/>
                 <div className='incorr text-center mt-2'><h5>Enter Proper City Name</h5></div>
-                <button className="btn btn-lg btn-info mt-2 form-control" onClick={fetchData}>Check</button>
+                <button className="btn btn-lg btn-info mt-2 form-control" id='btncheck' onClick={fetchData}>Check</button>
                 </div>
             </div>
             <div className='data2 text-center' id="dta" style={props.mode==='light'?{color:'black',border:'2px solid black',backgroundColor:'aliceblue'}:{color:'white',border:'2px solid white',backgroundColor:'rgb(2, 2, 10)'}}>

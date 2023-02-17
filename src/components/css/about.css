@@ -32,6 +32,7 @@ body{
     width: 400px;
     margin-left: 20px;
     height: 550px;
+    display: none;
 }
 .crds{
     position: absolute;
@@ -116,6 +117,7 @@ body{
     height: 507px;
     width: 450px;
     border-radius: 10px;
+    display: none;
 }
 .fore{
     margin-left: 20px;
@@ -152,6 +154,7 @@ figcaption{
 .airq{
     width: 500px;
     padding-right: 10px;
+    display: none;
 }
 .graph{
     width:900px;

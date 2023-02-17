@@ -19,6 +19,7 @@ const App=()=>{
   const pagesize=9;
   const apikey= process.env.REACT_APP_API_KEY2;
   // const apikey = process.env.REACT_APP_API_KEY;
+  const apik= process.env.REACT_APP_API_KEY3;
   const [mode, setMode]= useState('light')
   const toggleMode = () => {
   if (mode==='light')
@@ -70,7 +71,7 @@ const diblrev=()=>{
                     <Route exact path="/technology" element={<><Side/> <Newscomp mode={mode} apikey={apikey}  key="technology" className="col-9" category={"technology"} pagesize={pagesize} toggleMode={toggleMode}/></>}/>
                     <Route path="/login" element={<LogIn mode={mode} eml={eml} diblrev={diblrev} dibl={dibl} toggleMode={toggleMode} />}/>
                     <Route path="/subs" element={<Subscription mode={mode}  toggleMode={toggleMode}/>}/>
-                    <Route path="/about" element={<About mode={mode}  toggleMode={toggleMode}/>}/>
+                    <Route path="/about" element={<About mode={mode} apikey={apik} toggleMode={toggleMode}/>}/>
                     <Route path="/contact" element={<ContactUs mode={mode} eml={eml} toggleMode={toggleMode}/>}/>
                   </Routes>      
                   </ProSidebarProvider>        
