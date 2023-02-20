@@ -151,14 +151,12 @@ const About = (props)=> {
                 document.getElementById('mooni').textContent=parseData.forecast.forecastday[0].astro.moon_illumination;
                 document.getElementById('rainch').textContent=parseData.forecast.forecastday[0].day.daily_chance_of_rain===0?"No":"Yes";
                  document.getElementById('forecas').style.display="block";
-                document.getElementById('dta').style.display="block";
+                document.getElementById('dta').style.display="flex";
                 Showgraph();
                 const Bargraph=()=>{
                     let mintem = parseData.forecast.forecastday[0].day.mintemp_c;
                     let maxtem = parseData.forecast.forecastday[0].day.maxtemp_c;
                     var chart =new CanvasJS.Chart("barg",{
-                      height: 370,
-                      width: 370,
                       animationEnabled: true,
                       exportEnabled: true,
                       theme: `${props.mode+"1"}`, // "light1", "dark1", "dark2"
@@ -195,8 +193,6 @@ const About = (props)=> {
                     let w5 = parseData.forecast.forecastday[4].hour[19].gust_kph;
                     let w6 = parseData.forecast.forecastday[5].hour[19].gust_kph;
                     var chart =new CanvasJS.Chart("mgraph",{
-                      height: 370,
-                      width: 800,
                       animationEnabled: true,
                       exportEnabled: true,
                       theme: `${props.mode+"1"}`, // "light1", "dark1", "dark2"
@@ -242,9 +238,9 @@ const About = (props)=> {
                 document.querySelector(".graph").style.display="block";
                 document.querySelector(".barg").style.display="block";
                 document.querySelector(".mixgraph").style.display="block";
-                document.querySelector(".data").style.display="block";
+                document.querySelector(".data").style.display="flex";
                 document.querySelector(".airq").style.display="block";
-                document.querySelector(".astro").style.display="block";
+                document.querySelector(".astro").style.display="flex";
                  let icn = document.querySelectorAll("img");
                  for(let i=0;i<icn.length;i++){
                  icn[i].src = parseData.current.condition.icon;
@@ -268,8 +264,6 @@ const About = (props)=> {
               let temp6 = document.getElementById('day6').textContent.split('/')[1];
               tem6 = Number(temp6.split('o')[0]);
               var chart =new CanvasJS.Chart("graph",{
-                height: 285,
-                width: 800,
                 animationEnabled: true,
                 exportEnabled: true,
                 theme: `${props.mode+"1"}`, // "light1", "dark1", "dark2"
@@ -298,29 +292,30 @@ const About = (props)=> {
           }
           
     return ( 
-    <div id='divi'>
-        <div className='allinfo d-flex justify-content-around'  style={props.mode==='light'?{color:'black',border:'1px solid black',backgroundColor:'aliceblue'}:{color:'white',border:'1px solid white',backgroundColor:'rgb(2, 2, 10)'}}>
+    <div id='divi text-center py-5'>
+        <div className='allinfo d-flex justify-content-around mx-3 px-4'  style={props.mode==='light'?{color:'black',border:'1px solid black',backgroundColor:'aliceblue'}:{color:'white',border:'1px solid white',backgroundColor:'rgb(2, 2, 10)'}}>
             <h4 className='maincontent'>City : <span id='city'></span></h4>
             <h4 className='maincontent'>Country : <span id='coun'></span></h4>
             <h4 className='maincontent'>Latitude : <span id='lat'></span></h4>
             <h4 className='maincontent'>Longitude : <span id='lon'></span></h4>
         </div>
         {loading && <Loader/>}
-            <div className='data mt-3' style={props.mode==='light'?{color:'black',border:'1px solid black',backgroundColor:'aliceblue'}:{color:'white',border:'1px solid white',backgroundColor:'rgb(2, 2, 10)'}}>  
-                <h4 className='maincontent  mx-4'>Temperature : <span className='mx-3' id="Tem"></span></h4>
-                <h4 className='maincontent my-4 mx-4'>Wind Speed : <span className='mx-3' id="WS"></span></h4>
-                <h4 className='maincontent my-4 mx-4'>Wind Degree : <span className='mx-3' id="WD"></span></h4>
-                <h4 className='maincontent my-4 mx-4'>Wind Direction : <span className='mx-3' id="WDI"></span></h4>
-                <h4 className='maincontent my-4 mx-4'>Pressure : <span className='mx-3' id="Pr"></span></h4>
-                <h4 className='maincontent my-4 mx-4'>Humidity : <span className='mx-3' id="Hu"></span></h4>
-                <h4 className='maincontent my-4 mx-4'>Rainfall : <span className='mx-3' id="RF"></span></h4>
-                <h4 className='maincontent my-4 mx-4'>Cloudy : <span className='mx-3' id="C"></span></h4>
-                <h4 className='maincontent  mx-4'>UV : <span className='mx-3' id="UV"></span></h4>
+           <div className='boxF'>
+            <div className='data my-4 mx-3 boxS' style={props.mode==='light'?{color:'black',border:'1px solid black',backgroundColor:'aliceblue'}:{color:'white',border:'1px solid white',backgroundColor:'rgb(2, 2, 10)'}}>  
+                <h4 className='my-3 mx-3 maincontent'>Temperature : <span className='' id="Tem"></span></h4>
+                <h4 className='my-3 mx-3 maincontent'>Wind Speed : <span className='' id="WS"></span></h4>
+                <h4 className='my-3 mx-3 maincontent'>Wind Degree : <span className='' id="WD"></span></h4>
+                <h4 className='my-3 mx-3 maincontent'>Wind Direction : <span className='' id="WDI"></span></h4>
+                <h4 className='my-3 mx-3 maincontent'>Pressure : <span className='' id="Pr"></span></h4>
+                <h4 className='my-3 mx-3 maincontent'>Humidity : <span className='' id="Hu"></span></h4>
+                <h4 className='my-3 mx-3 maincontent'>Rainfall : <span className='' id="RF"></span></h4>
+                <h4 className='my-3 mx-3 maincontent'>Cloudy : <span className='' id="C"></span></h4>
+                <h4 className='my-3 mx-3 maincontent '>UV : <span className='' id="UV"></span></h4>
             </div>
             
-            <div className='thun'></div>
-            <div className='thun2'></div>
-                <div className="crds card" style={props.mode==='light'?{width:"400px",height:"300px",backgroundColor:'aliceblue'}:{width:"400px",height:"300px",color:"white",border:"2px solid white",backgroundColor:'rgb(2, 2, 10)'}}>
+             <div className=''>
+                <div className="crds card my-4" style={props.mode==='light'?{width:"400px",height:"300px",backgroundColor:'aliceblue'}:{width:"400px",height:"300px",color:"white",border:"2px solid white",backgroundColor:'rgb(2, 2, 10)'}}>
+                <div className='thun'></div>
                 <div className="card-header text-center"><h3>Check Weather Stats</h3></div>
                 <div className="card-body"> <h5 className='text-center'>Enter Your City below</h5>
                 <input type="text" className="mt-4 form-control" id="texts" placeholder="Enter Your City..."/>
@@ -328,16 +323,12 @@ const About = (props)=> {
                 <button className="btn btn-lg btn-info mt-2 form-control" id='btncheck' onClick={fetchData}>Check</button>
                 </div>
             </div>
-            <div className='data2 text-center' id="dta" style={props.mode==='light'?{color:'black',border:'2px solid black',backgroundColor:'aliceblue'}:{color:'white',border:'2px solid white',backgroundColor:'rgb(2, 2, 10)'}}>
-                <h4 className='maincontent weatype'>Current Weather Type : <span id='wea'></span></h4>
-                <img className='imag' alt=''/>
-                <img className='imag1' alt=''/>
-                <img className='imag2' alt=''/>
-                <img className='imag3' alt=''/>
-                <img className='imag4' alt=''/>
+            <div className='data2' id="dta" style={props.mode==='light'?{color:'black',border:'2px solid black',backgroundColor:'aliceblue'}:{color:'white',border:'2px solid white',backgroundColor:'rgb(2, 2, 10)'}}>
+                <h4 className='maincontent text-center'>Current Weather Type : <span id='wea'></span></h4>
             </div>  
-            <div className='astro' id='astr' style={props.mode==='light'?{color:'black',border:'1px solid black',backgroundColor:'aliceblue'}:{color:'white',border:'1px solid white',backgroundColor:'rgb(2, 2, 10)'}}>
-                <h2 className='my-4 text-center'>Astro</h2>
+            </div>
+            <div className='astro my-4 boxS mx-3' id='astr' style={props.mode==='light'?{color:'black',border:'1px solid black',backgroundColor:'aliceblue'}:{color:'white',border:'1px solid white',backgroundColor:'rgb(2, 2, 10)'}}>
+                <h2 className='my-3 text-center'>Astro</h2>
                 <hr/>
                 <h4 className='maincontent text-center mt-4'>Sunrise Time  :  <span id='sunr'></span></h4>
                 <h4 className='maincontent text-center mt-4'>Sunset Time  :  <span id='suns'></span></h4>
@@ -347,8 +338,9 @@ const About = (props)=> {
                 <h4 className='maincontent text-center mt-4'>Moon Phase  :  <span id='moonp'></span></h4>
                 <h4 className='maincontent text-center mt-4'>Chances of Rain  :  <span id='rainch'></span></h4>
             </div>
-            <div className='fore my-3' id='forecas' style={props.mode==='light'?{color:'black',border:'1px solid black',backgroundColor:'aliceblue'}:{color:'white',border:'1px solid white',backgroundColor:'rgb(2, 2, 10)'}}>
-                <div className='my-3 d-flex justify-content-around'>
+            </div>
+            <div className='my-3 mx-5' id='forecas' style={props.mode==='light'?{color:'black',border:'1px solid black',backgroundColor:'aliceblue'}:{color:'white',border:'1px solid white',backgroundColor:'rgb(2, 2, 10)'}}>
+                <div className='my-3 fore'>
                         <figure>
                         <figcaption className="fs-3 text-center">Today</figcaption>
                         <div className='text-center'><img id='image1' alt=""/></div>
@@ -381,8 +373,8 @@ const About = (props)=> {
                         </figure>
                 </div>
             </div>
-            <div className='my-3 furtdata d-flex justify-content-between'>
-                <div className='airq' style={props.mode==='light'?{color:'black',border:'1px solid black',backgroundColor:'aliceblue'}:{color:'white',border:'1px solid white',backgroundColor:'rgb(2, 2, 10)'}}>
+            <div className='boxF my-4 mx-2'>
+                <div className='airq mx-2' style={props.mode==='light'?{color:'black',border:'1px solid black',backgroundColor:'aliceblue'}:{color:'white',border:'1px solid white',backgroundColor:'rgb(2, 2, 10)'}}>
                     <h2 className='text-center'>Air Quality</h2>
                         <ul>
                         <li className="d-flex justify-content-between align-items-center">
@@ -415,14 +407,14 @@ const About = (props)=> {
                         </li>
                         </ul>
                 </div>
-              <div className='graph px-3 py-3' id='graph' style={props.mode==='light'?{color:'black',border:'1px solid black',backgroundColor:'aliceblue'}:{color:'white',border:'1px solid white',backgroundColor:'rgb(2, 2, 10)'}}>
+              <div className='graph my-4 mx-2' id='graph' style={props.mode==='light'?{color:'black',border:'1px solid black',backgroundColor:'aliceblue'}:{color:'white',border:'1px solid white',backgroundColor:'rgb(2, 2, 10)'}}>
                 
                 </div>
+                
             </div>
-            <div className='d-flex justify-content-between final my-3'>
-               <div className='barg px-3 py-3' id='barg' style={props.mode==='light'?{color:'black',border:'1px solid black',backgroundColor:'aliceblue'}:{color:'white',border:'1px solid white',backgroundColor:'rgb(2, 2, 10)'}}></div>
-            
-            <div className='mixgraph px-3 py-3' id='mgraph' style={props.mode==='light'?{color:'black',border:'1px solid black',backgroundColor:'aliceblue'}:{color:'white',border:'1px solid white',backgroundColor:'rgb(2, 2, 10)'}}></div>
+            <div className='boxF my-4 mx-2'>
+            <div className='barg my-4 mx-2' id='barg' style={props.mode==='light'?{color:'black',border:'1px solid black',backgroundColor:'aliceblue'}:{color:'white',border:'1px solid white',backgroundColor:'rgb(2, 2, 10)'}}></div>
+            <div className='mixgraph my-4 mx-2' id='mgraph' style={props.mode==='light'?{color:'black',border:'1px solid black',backgroundColor:'aliceblue'}:{color:'white',border:'1px solid white',backgroundColor:'rgb(2, 2, 10)'}}></div>
             </div>
     </div>
     )

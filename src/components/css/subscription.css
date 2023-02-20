@@ -1,21 +1,11 @@
 #hii{
-    margin-left: 150px;
+    margin-top: 10%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
 }
-#hii a{
-    margin-left: 70px;
-    width: 200px;
-}
-#i1{
-    width: 370px;
-    height: 500px;
-}
-#i2{
-    width: 370px;
-    height: 500px;
-}
-#i3{
-    width: 370px;
-    height: 500px;
+#i1,#i2,#i3{
+    width: 20rem;
 }
 #i2:hover{
     box-shadow:  3px 2px 31px 10px rgba(242,229,46,0.83) !important;
@@ -33,30 +23,6 @@
     color: white;
 }
 .rs{
-    border: 2px solid black;
-    width: 180px;
-    margin-left: 80px;
-    border-radius: 3px;
-    margin-bottom: 20px;
+    border: 1px solid black;
 }
-@media screen and (max-width:800px){
-    #hii{
-          margin-left: 0;
-    }
-    #i1 ,#i2, #i3{
-        width: 300px;
-        margin-left: 60px;
-        margin-bottom: 30px;
-        margin-top: -20px;
-    }
-    #i2,#i3{
-        margin-top: 20px;
-    }
-    .rs{
-        margin-left: 40px;
-    }
-    #hii a{
-        margin-left: 30px;
-        margin-top: 40px;
-    }
-}
+

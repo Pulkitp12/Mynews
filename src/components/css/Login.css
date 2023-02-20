@@ -1,33 +1,24 @@
-.hey1{
-    left: 0;
-    bottom:0;
-    right: 0;
-    top: 0;
-    position: absolute;}
-
-.row{
-     margin-top: 170px;
+.boxes{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-
-.form{
-    position:absolute;
-    left: 30%;
-    width: 500px;
+.boxes .form{
+    position: absolute;
+    top: 20%;
+    width: 70vw;
     border-radius: 10px;
-    padding: 40px, 25px;
-    margin-left: 80px;
 }
 
-.form h2{
-    margin-bottom: 20px;
-    font-size: 30px;
-    margin-top: 20px;
+.boxes .form input{
+    width: 80%;
+    background-color: aliceblue;
+    font-size: 15px;
+    letter-spacing: 1px;
+    outline: none;
 }
-.form input{
-    width: 90%;
-    height:25px;
-    padding: 15px;
-    margin-bottom: 15px;
+.bord .form input{
+    width: 100%;
     background-color: aliceblue;
     font-size: 15px;
     letter-spacing: 1px;
@@ -61,26 +52,26 @@
 .form a:hover{
     color: aqua;
 }
-h6{
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 12px;
-    margin-top: 5px;
-}
-#sub i{
-    margin-left: 40px;
-}
+
 .see{
-    font-size: 30px;
     background: transparent;
     color: rgb(21, 33, 209);
     border-style: none;
 } 
 .bord{
-    margin-top: -80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border: 2px solid white;
-    position: absolute;
-    left: 32%;
 }
+.bord .form{
+    position: absolute;
+    left: 17%;
+    top: 20%;
+    width: 70vw;
+    border-radius: 10px;
+}
+
 #icns i{
     color: rgb(43, 131, 226);
 }
@@ -88,49 +79,15 @@ h6{
     color: blue;
 }
 
-@media screen and (max-width:800px){
-    .form{
-        margin-top: -100px;
-        position: initial;
-        margin-left: 95px;
-        margin-right: 20px;
-        width: 320px;
-    }
-    .see{
-        font-size: 22px;
-    }
-    #sub i{
-        margin-left: 10px;
-        font-size: 30px;
-    }
-    #sup{
-        margin-top: -10px;
-        position: initial;
-        padding-bottom: 10px;
-    }
-    #sup button{
-        margin-top: 10px;
-        margin-left: 90px;
-        width: 50%;
-    }
-    .bord{
-        margin-top: -120px !important;
-        width: 350px;
-        margin-left: 95px;
-    }
-    .supbtn{
-        height: 50px;
-    }
-    
-}
 #ale{
-    height: 40px;
     font-size: 15px;
 }
-#icns a{
-    margin-left: 22px;
-}
-
-form button{
-    width: 100%;
+@media screen and (min-width:1200px){
+    .boxes .form{
+        width: 450px;
+    }
+    .bord .form{
+        width: 450px;
+        left: 35%;
+    }
 }

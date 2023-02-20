@@ -1,135 +1,38 @@
 body{
     overflow-x: hidden;
 }
-@media screen and (max-width:800px) {
-    .hey1{
-        padding-top: 20px;
-    }
-}
+
 .thun{
     position: absolute;
-    right: 430px;
-    top: 150px;
     background: url(../thun.gif);
     height: 150px;
     width: 80px;
     background-repeat: no-repeat;
     background-size: contain;
 }
-.thun2{
-    position: absolute;
-    right: 10px;
-    top: 150px;
-    background: url(../thun.gif);
-    height: 150px;
-    width: 80px;
-    background-repeat: no-repeat;
-    background-size: contain;
-}
-.data{
-    padding-top: 50px;
-    padding-bottom: 50px;
-    width: 400px;
-    margin-left: 20px;
-    height: 550px;
-    display: none;
-}
-.crds{
-    position: absolute;
-    right: 50px;
-    top: 200px;
-}
-.data2{
-    display: grid;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    right: 50px;
-    bottom: 65px;
-    width: 400px;
-    height: 150px;
-    border-radius: 30px;
-    display: none;
-}
-.imag{
-    position: absolute;
-    top: 20px;
-    width: 40px;
-    height: 40px;
-    animation: move 10s linear infinite;
-}
-.imag1{
-    position: absolute;
-    top: 35px;
-    width: 40px;
-    height: 40px;
-    animation: move 14s linear infinite;
-}
-.imag2{
-    position: absolute;
-    top: 80px;
-    width: 40px;
-    height: 40px;
-    animation: move 6s linear infinite;
-}
-.imag3{
-    position: absolute;
-    top: 7px;
-    width: 40px;
-    height: 40px;
-    animation: move 8s linear infinite;
-}
-.imag4{
-    position: absolute;
-    top: 90px;
-    width: 40px;
-    height: 40px;
-    animation: move 18s linear infinite;
-}
-@keyframes move {
-    0%{
-        left: -2%;
-    }
-    
-    100%{
-        left: 86%;
-    }
-    
-}
-.weatype{
-   margin-top: 50px;
-}
+
 .incorr{
     color: red;
     visibility:hidden;
 }
 .allinfo{
-    margin-left: 20px;
-    margin-right: 20px;
-    height: 60px;
-    margin-top: 80px;
+    margin-top: 10%;
     padding-top: 15px;
 }
-.astro{
-    position: absolute;
-    left: 520px;
-    top: 26.5%;
-    height: 507px;
-    width: 450px;
-    border-radius: 10px;
-    display: none;
-}
+
 .fore{
-    margin-left: 20px;
-    margin-right: 20px;
-    height: 200px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 #image1,#image2,#image3,#image4,#image5,#image6{
     height: 90px;
     width: 100px;
 }
 figcaption{
-    font-size: 20px;
+    font-size: 15px;
 }
 #forecas{
     display: none;
@@ -144,33 +47,68 @@ figcaption{
 .data,.data2,.astro,.allinfo,.fore{
     cursor: default;
 }
-.furtdata{
-    margin-left: 20px;
-    margin-right: 20px;
-}
 .fw2{
     font-weight: 450;
 }
 .airq{
-    width: 500px;
+    width: 30%;
     padding-right: 10px;
     display: none;
 }
 .graph{
-    width:900px;
+    height: 43vh;
+    resize: both;
+    overflow: scroll;
+    width:60%;
     display: none;
 }
-.final{
-    margin-left: 20px;
-    margin-right: 20px;
-}
 .barg{
-    height: 400px;
-    width:500px;
+    height: 40vh;
+    width: 35%;
+    resize: both;
+    overflow: scroll;
     display: none;
 }
 .mixgraph{
-    width: 900px;
-    height: 400px;
+    height: 40vh;
+    resize: both;
+    overflow: scroll;
+    width: 60%;
     display: none;
+}
+.boxF{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.data,.astro{
+    width: 30vw;
+}
+.data2{
+    width: 26vw;
+    height: 30vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.boxS{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+@media screen and (max-width:1000px){
+    .fore{
+        flex-direction: column;
+    }
+    .boxF{
+        flex-direction: column;
+    }
+    .allinfo{
+        flex-direction: column;
+        margin-top: 20%;
+    }
+    .data,.astro,.crds,.airq,.mixgraph,.barg,.graph,.data2,.allinfo{
+        width: 100%;
+    }
 }

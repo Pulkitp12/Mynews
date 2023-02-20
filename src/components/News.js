@@ -11,7 +11,7 @@ const News =(props)=> {
                    <div><p className="card-text"><small className="text-muted ">Source : {props.source}</small></p></div>
                    <div className='titl'> <h5 className="card-title">{props.title}</h5></div>
                    <div className='desc'><p className="card-text">{props.description}</p></div>
-                   <div><p className="card-text"><small className="text-muted">{new Date(props.date).toGMTString()}</small></p></div>
+                   <div><p className="card-text txt"><small className="text-muted">{new Date(props.date).toGMTString()}</small></p></div>
                     <hr/>
                     <div><a href={props.newsUrl} target="_blank" rel="noreferrer" className="btn btn-primary btnrm">READ MORE</a></div>
                 </div>

@@ -1,16 +1,23 @@
-@media screen and (max-width:800px){
-    .ctus{
-        margin-top: 70px;
+
+.box1{
+    width: 70vw;
+}
+.box2{
+    width: 70vw;
+}
+.mainbox{
+    margin-top: 10%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+@media screen and (min-width:1000px){
+    .box1{
+        width: 30rem;
     }
-    .ctfrm{
-        margin-bottom: 30px;
-    }
-    .ctfrm button{
-        margin-left: 60px !important;
+    .box2{
+        width: 30rem;
+        height: 270px;
     }
 
-}
-.ctfrm button{
-    margin-left: 155px;
-    width: 250px;
 }

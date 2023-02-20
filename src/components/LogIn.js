@@ -89,11 +89,10 @@ const LogIn = (props) => {
   }
  
     return (
-      <div className='hey1' style={props.mode==='light'?{color:'black',backgroundColor:'white'}:{color:'white',backgroundColor:'black'}}>
-        <div className='row'>
-      <div className='col-md-4 form' id='sub' style={props.mode==='light'?{color:'black',backgroundColor:'white',border: '3px solid black'}:{color:'white',backgroundColor:'black',border: '3px solid white'}}><h2 className='text-center'>LogIn/SignUp</h2>
-        <input type="text" name="email" id="emin" placeholder="Enter Email here" className='mt-3'/>
-        <input type="Password" name="password" id="psin" placeholder="Enter password"/><button className="see" onClick={chan}>&#9739;</button>
+      <div className='boxes text-center' style={props.mode==='light'?{color:'black',backgroundColor:'white'}:{color:'white',backgroundColor:'black'}}>
+      <div className='form px-3' id='sub' style={props.mode==='light'?{color:'black',backgroundColor:'white',border: '3px solid black'}:{color:'white',backgroundColor:'black',border: '3px solid white'}}><h2 className='text-center'>LogIn/SignUp</h2>
+        <input type="text" name="email" id="emin" placeholder="Enter Email here" className='form-control my-4'/>
+        <div className='d-flex justify-content-between'><input type="Password" className='form-control' name="password" id="psin" placeholder="Enter password"/><button className="see" onClick={chan}>&#9739;</button></div>
         <span className={`text-center text-${success}`} id='ale' style={{display:'none'}}></span>
         <button className='btn btn-md btn-success mt-4' id='lgn' onClick={add}>LOGIN</button>
         <div className='d-flex justify-content-between my-3 py-3'>
@@ -101,18 +100,18 @@ const LogIn = (props) => {
         <button onClick={show} className="btn btn-md btn-primary supbtn">SignUp</button>
         </div>
         <span className='mt-3'><h2 className='text-center'>Log In With</h2></span>
-        <div className='my-4' id='icns'>
+        <div className='my-4 d-flex justify-content-around' id='icns'>
         
-           <a href="https://www.facebook.com/login/"><i className="fa fa-2x fa-facebook-official"></i></a>
-          <a href="https://accounts.google.com/signinchooser?ifkv=AeAAQh4hG3swBqX66zBXdZFV7Tx3jIDecvn7cfCvAX7BEx9GWZ7APYugk9ox0J6bIZgfI_mqIQgX&flowName=GlifWebSignIn&flowEntry=ServiceLogin"><i className="fa fa-2x fa-google-plus"></i></a>
-           <a href="https://www.instagram.com/accounts/login/"><i className="fa fa-2x fa-instagram"></i></a>
-           <a href="https://www.linkedin.com/login"><i className="fa fa-2x fa-linkedin-square"></i></a>
+           <a disabled href="https://www.facebook.com/login/"><i className="fa fa-2x fa-facebook-official"></i></a>
+          <a disabled href="https://accounts.google.com/signinchooser?ifkv=AeAAQh4hG3swBqX66zBXdZFV7Tx3jIDecvn7cfCvAX7BEx9GWZ7APYugk9ox0J6bIZgfI_mqIQgX&flowName=GlifWebSignIn&flowEntry=ServiceLogin"><i className="fa fa-2x fa-google-plus"></i></a>
+           <a disabled href="https://www.instagram.com/accounts/login/"><i className="fa fa-2x fa-instagram"></i></a>
+           <a disabled href="https://www.linkedin.com/login"><i className="fa fa-2x fa-linkedin-square"></i></a>
            
         </div>
       </div>
-      <div className='col-md-2'></div>
-      <div className='col-md-4 bord' id="sup" style={props.mode==='light'?{color:'black',backgroundColor:'white',border: '3px solid black'}:{color:'white',backgroundColor:'black',border: '3px solid white'}}><h1 className='text-center'>SignUp</h1>
-      <form className='px-2 py-3 supform'>
+      
+      <div className='bord text-center' id="sup" style={props.mode==='light'?{color:'black',backgroundColor:'white'}:{color:'white',backgroundColor:'black'}}>
+      <div className='form px-5 py-3' style={props.mode==='light'?{color:'black',backgroundColor:'white',border: '3px solid black'}:{color:'white',backgroundColor:'black',border: '3px solid white'}}><h1 className='text-center'>SignUp</h1>
                 <div className="mb-3">
                 <label className="form-label">First Name</label>
                 <input type="text" id='a1' className="form-control" aria-describedby="emailHelp"/>
@@ -131,9 +130,7 @@ const LogIn = (props) => {
               </div>
               <div className={`text-center text-${success}`} id='ble' style={{display:'none'}}></div>
               <button className="mt-2 btn btn-primary" onClick={submit}>Submit</button>
-            </form>
-            
-      </div>
+            </div>    
       </div>
       
       </div>

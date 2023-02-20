@@ -38,7 +38,7 @@ const NewsComp=(props)=>{
     },1000);
     return (
       <div className='mt-5 py-3 newcom'>
-            <div className="main" style={props.mode==='light'?{color:'black'}:{color:'white'}}><span id='time'><i className="fa fa-fw fa-2x fa-clock-o"></i><span id='clock'></span></span>
+            <div className="main" style={props.mode==='light'?{color:'black'}:{color:'white'}}><span id='time'><i className="fa fa-fw fa-1x fa-clock-o"></i><span id='clock'></span></span>
              <h1 className='text-center' style={props.mode==='light'?{color:'black'}:{color:'white'}}>{props.category?props.category.toUpperCase():"TOP HEADLINES"}</h1>
                {loading && <Loader/>}
                               <InfiniteScroll
@@ -46,10 +46,10 @@ const NewsComp=(props)=>{
                             next={fetchMoreData}
                             hasMore={articles.length<totalResults}
                             loader={<Loader></Loader>}>
-                        <div className='container '>
-                      <div className='row mt-3 abc'>
+                        <div className='container text-center'>
+                      <div className='mt-3 abc'>
                       {articles.map((element)=>{
-                              return <div className="col-sm-4 my-4" key={element.url} style={{color:'black'}}>
+                              return <div className="my-4 mx-5" key={element.url} style={{color:'black'}}>
                               <News title={element.title?element.title.substr(0,80) + "...":""} description={element.description?element.description.substr(0,80) + "...":""} imageUrl={element.urlToImage?element.urlToImage:""} newsUrl={element.url?element.url:""} date={element.publishedAt} source={element.source.name}/>
                               </div>}
                       )}
