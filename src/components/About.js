@@ -193,6 +193,8 @@ const About = (props)=> {
                     let w5 = parseData.forecast.forecastday[4].hour[19].gust_kph;
                     let w6 = parseData.forecast.forecastday[5].hour[19].gust_kph;
                     var chart =new CanvasJS.Chart("mgraph",{
+                        width:800,
+                        height:350,
                       animationEnabled: true,
                       exportEnabled: true,
                       theme: `${props.mode+"1"}`, // "light1", "dark1", "dark2"
@@ -264,6 +266,8 @@ const About = (props)=> {
               let temp6 = document.getElementById('day6').textContent.split('/')[1];
               tem6 = Number(temp6.split('o')[0]);
               var chart =new CanvasJS.Chart("graph",{
+                width:800,
+                height:350, 
                 animationEnabled: true,
                 exportEnabled: true,
                 theme: `${props.mode+"1"}`, // "light1", "dark1", "dark2"
@@ -292,15 +296,15 @@ const About = (props)=> {
           }
           
     return ( 
-    <div id='divi text-center py-5'>
-        <div className='allinfo d-flex justify-content-around mx-3 px-4'  style={props.mode==='light'?{color:'black',border:'1px solid black',backgroundColor:'aliceblue'}:{color:'white',border:'1px solid white',backgroundColor:'rgb(2, 2, 10)'}}>
+    <div id='divi text-center py-2'>
+        <div className='allinfo d-flex justify-content-around mx-3 px-2'  style={props.mode==='light'?{color:'black',border:'1px solid black',backgroundColor:'aliceblue'}:{color:'white',border:'1px solid white',backgroundColor:'rgb(2, 2, 10)'}}>
             <h4 className='maincontent'>City : <span id='city'></span></h4>
             <h4 className='maincontent'>Country : <span id='coun'></span></h4>
             <h4 className='maincontent'>Latitude : <span id='lat'></span></h4>
             <h4 className='maincontent'>Longitude : <span id='lon'></span></h4>
         </div>
         {loading && <Loader/>}
-           <div className='boxF'>
+           <div className='boxF mx-3'>
             <div className='data my-4 mx-3 boxS' style={props.mode==='light'?{color:'black',border:'1px solid black',backgroundColor:'aliceblue'}:{color:'white',border:'1px solid white',backgroundColor:'rgb(2, 2, 10)'}}>  
                 <h4 className='my-3 mx-3 maincontent'>Temperature : <span className='' id="Tem"></span></h4>
                 <h4 className='my-3 mx-3 maincontent'>Wind Speed : <span className='' id="WS"></span></h4>
@@ -312,17 +316,15 @@ const About = (props)=> {
                 <h4 className='my-3 mx-3 maincontent'>Cloudy : <span className='' id="C"></span></h4>
                 <h4 className='my-3 mx-3 maincontent '>UV : <span className='' id="UV"></span></h4>
             </div>
-            
-             <div className=''>
-                <div className="crds card my-4" style={props.mode==='light'?{width:"400px",height:"300px",backgroundColor:'aliceblue'}:{width:"400px",height:"300px",color:"white",border:"2px solid white",backgroundColor:'rgb(2, 2, 10)'}}>
+            <div className='mx-3'>
+                <div className="crds card my-4" style={props.mode==='light'?{backgroundColor:'aliceblue'}:{color:"white",border:"2px solid white",backgroundColor:'rgb(2, 2, 10)'}}>
                 <div className='thun'></div>
                 <div className="card-header text-center"><h3>Check Weather Stats</h3></div>
                 <div className="card-body"> <h5 className='text-center'>Enter Your City below</h5>
                 <input type="text" className="mt-4 form-control" id="texts" placeholder="Enter Your City..."/>
                 <div className='incorr text-center mt-2'><h5>Enter Proper City Name</h5></div>
                 <button className="btn btn-lg btn-info mt-2 form-control" id='btncheck' onClick={fetchData}>Check</button>
-                </div>
-            </div>
+                </div></div>
             <div className='data2' id="dta" style={props.mode==='light'?{color:'black',border:'2px solid black',backgroundColor:'aliceblue'}:{color:'white',border:'2px solid white',backgroundColor:'rgb(2, 2, 10)'}}>
                 <h4 className='maincontent text-center'>Current Weather Type : <span id='wea'></span></h4>
             </div>  
@@ -339,8 +341,8 @@ const About = (props)=> {
                 <h4 className='maincontent text-center mt-4'>Chances of Rain  :  <span id='rainch'></span></h4>
             </div>
             </div>
-            <div className='my-3 mx-5' id='forecas' style={props.mode==='light'?{color:'black',border:'1px solid black',backgroundColor:'aliceblue'}:{color:'white',border:'1px solid white',backgroundColor:'rgb(2, 2, 10)'}}>
-                <div className='my-3 fore'>
+            <div className='my-3 mx-3' id='forecas'>
+                <div className='my-3 fore' style={props.mode==='light'?{color:'black',border:'1px solid black',backgroundColor:'aliceblue'}:{color:'white',border:'1px solid white',backgroundColor:'rgb(2, 2, 10)'}}>
                         <figure>
                         <figcaption className="fs-3 text-center">Today</figcaption>
                         <div className='text-center'><img id='image1' alt=""/></div>
@@ -373,9 +375,9 @@ const About = (props)=> {
                         </figure>
                 </div>
             </div>
-            <div className='boxF my-4 mx-2'>
-                <div className='airq mx-2' style={props.mode==='light'?{color:'black',border:'1px solid black',backgroundColor:'aliceblue'}:{color:'white',border:'1px solid white',backgroundColor:'rgb(2, 2, 10)'}}>
-                    <h2 className='text-center'>Air Quality</h2>
+            <div className='AIRQ boxF my-4 mx-2'>
+                <div className='airq my-2 mx-2' style={props.mode==='light'?{color:'black',border:'1px solid black',backgroundColor:'aliceblue'}:{color:'white',border:'1px solid white',backgroundColor:'rgb(2, 2, 10)'}}>
+                    <h2 className='text-center my-2'>Air Quality</h2>
                         <ul>
                         <li className="d-flex justify-content-between align-items-center">
                         <h4>CO</h4>
@@ -412,7 +414,7 @@ const About = (props)=> {
                 </div>
                 
             </div>
-            <div className='boxF my-4 mx-2'>
+            <div className='GRAPH boxF my-4 mx-2'>
             <div className='barg my-4 mx-2' id='barg' style={props.mode==='light'?{color:'black',border:'1px solid black',backgroundColor:'aliceblue'}:{color:'white',border:'1px solid white',backgroundColor:'rgb(2, 2, 10)'}}></div>
             <div className='mixgraph my-4 mx-2' id='mgraph' style={props.mode==='light'?{color:'black',border:'1px solid black',backgroundColor:'aliceblue'}:{color:'white',border:'1px solid white',backgroundColor:'rgb(2, 2, 10)'}}></div>
             </div>

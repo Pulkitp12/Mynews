@@ -16,7 +16,7 @@ body{
     visibility:hidden;
 }
 .allinfo{
-    margin-top: 10%;
+    margin-top: 5% !important;
     padding-top: 15px;
 }
 
@@ -24,8 +24,6 @@ body{
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    margin-left: 10%;
-    margin-right: 10%;
 }
 #image1,#image2,#image3,#image4,#image5,#image6{
     height: 90px;
@@ -97,6 +95,9 @@ figcaption{
     flex-wrap: wrap;
     flex-direction: column;
 }
+.crds{
+    width: 26vw;
+}
 @media screen and (max-width:1000px){
     .fore{
         flex-direction: column;
@@ -106,9 +107,15 @@ figcaption{
     }
     .allinfo{
         flex-direction: column;
-        margin-top: 20%;
+        margin-top: 20% !important;
     }
-    .data,.astro,.crds,.airq,.mixgraph,.barg,.graph,.data2,.allinfo{
+    .data,.astro,#forecas,.allinfo{
+        width: 90%;
+    }
+    .crds,.data2,.mixgraph,.barg,.graph,.airq{
         width: 100%;
+    }
+    .AIRQ,.GRAPH{
+        margin-right: 5% !important;
     }
 }
