@@ -24,6 +24,7 @@ body{
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
+    display: none;
 }
 #image1,#image2,#image3,#image4,#image5,#image6{
     height: 90px;
@@ -31,9 +32,6 @@ body{
 }
 figcaption{
     font-size: 15px;
-}
-#forecas{
-    display: none;
 }
 .maincontent span{
     font-weight: 350;
@@ -49,7 +47,7 @@ figcaption{
     font-weight: 450;
 }
 .airq{
-    width: 30%;
+    width: 32vw;
     padding-right: 10px;
     display: none;
 }
@@ -57,12 +55,12 @@ figcaption{
     height: 43vh;
     resize: both;
     overflow: scroll;
-    width:60%;
+    width:58vw;
     display: none;
 }
 .barg{
     height: 40vh;
-    width: 35%;
+    width: 32vw;
     resize: both;
     overflow: scroll;
     display: none;
@@ -71,7 +69,7 @@ figcaption{
     height: 40vh;
     resize: both;
     overflow: scroll;
-    width: 60%;
+    width: 58vw;
     display: none;
 }
 .boxF{
@@ -81,6 +79,7 @@ figcaption{
 }
 .data,.astro{
     width: 30vw;
+    display: none;
 }
 .data2{
     width: 26vw;
@@ -89,6 +88,7 @@ figcaption{
     align-items: center;
     flex-direction: column;
     justify-content: space-evenly;
+    display: none;
 }
 .boxS{
     display: flex;
@@ -112,10 +112,10 @@ figcaption{
     .data,.astro,#forecas,.allinfo{
         width: 90%;
     }
-    .crds,.data2,.mixgraph,.barg,.graph,.airq{
+    .crds,.data2{
         width: 100%;
     }
-    .AIRQ,.GRAPH{
-        margin-right: 5% !important;
+    .mixgraph,.barg,.graph,.airq{
+        width: 95%;
     }
 }

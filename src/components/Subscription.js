@@ -10,7 +10,7 @@ const Subscription=(props)=> {
                 <h5 className="card-title text-center">Silver Plan</h5>
                 <p className="card-text text-center">For 3 Months</p>
                 <h5 className="card-title text-center rs">₹ 300.00</h5>
-                <a href="https://www.westernunion.com/us/en/web/send-money/start?ReceiveCountry=IN&ISOCurrency=INR&SendAmount=4.00&FundsOut=BA&FundsIn=ACH" target="_blank" rel="noreferrer" className="form-control btn btn-secondary">Buy Now</a>
+                <a href="# " rel="noreferrer" className="form-control btn btn-secondary">Buy Now</a>
         
             </div></div>
            
@@ -20,7 +20,7 @@ const Subscription=(props)=> {
                 <h5 className="card-title text-center">Gold Plan</h5>
                 <p className="card-text text-center">For 6 Months</p>
                 <h5 className="card-title text-center rs">₹ 500.00</h5>
-                <a href="https://www.westernunion.com/us/en/web/send-money/start?ReceiveCountry=IN&ISOCurrency=INR&SendAmount=7.00&FundsOut=BA&FundsIn=ACH" target="_blank" rel="noreferrer" className="form-control btn btn-warning">Buy Now</a>
+                <a href="# " rel="noreferrer" className="form-control btn btn-warning">Buy Now</a>
       
             </div></div>
         
@@ -30,7 +30,7 @@ const Subscription=(props)=> {
                 <h5 className="card-title text-center">Platinum Plan</h5>
                 <p className="card-text text-center">For 12 Months</p>
                 <h5 className="card-title text-center rs">₹ 1000.00</h5>
-                <a href="https://www.westernunion.com/us/en/web/send-money/start?ReceiveCountry=IN&ISOCurrency=INR&SendAmount=13.00&FundsOut=BA&FundsIn=ACH" target="_blank" rel="noreferrer" className="form-control btn btn-info">Buy Now</a>
+                <a href="# " rel="noreferrer" className="form-control btn btn-info">Buy Now</a>
          
             </div></div>
     </div>

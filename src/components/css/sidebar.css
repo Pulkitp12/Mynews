@@ -6,3 +6,6 @@
     margin-top: 50px;
     font-size: 20px;
 }
+.element strong:hover{
+    color: black;
+}

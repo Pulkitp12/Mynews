@@ -11,7 +11,7 @@
 }
 
 .boxes .form input{
-    width: 80%;
+    width: 100%;
     background-color: aliceblue;
     font-size: 15px;
     letter-spacing: 1px;
@@ -54,9 +54,13 @@
 }
 
 .see{
-    background: transparent;
     color: rgb(21, 33, 209);
-    border-style: none;
+    border: 1px solid gainsboro;
+    background-color: aliceblue;
+    border-radius: 5px;
+    border-left: none;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
 } 
 .bord{
     display: flex;
@@ -90,4 +94,9 @@
         width: 450px;
         left: 35%;
     }
+}
+#psin{
+    border-right: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
 }

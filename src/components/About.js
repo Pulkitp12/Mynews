@@ -7,47 +7,7 @@ var CanvasJS = CanvasJSReact.CanvasJS;
 const About = (props)=> {           
     const [loading,setLoading] = useState(false);
             const fetchData = async() => {
-                if(document.getElementById('btncheck').textContent==="Clear"){
-                    document.getElementById('texts').removeAttribute("disabled");
-                    document.getElementById('Pr').textContent="";
-                    document.getElementById('Tem').textContent="";
-                    document.getElementById('WS').textContent="";
-                    document.getElementById('WD').textContent="";
-                    document.getElementById('WDI').textContent="";
-                    document.getElementById('Hu').textContent="";
-                    document.getElementById('C').textContent="";
-                    document.getElementById('RF').textContent="";
-                    document.getElementById('UV').textContent="";
-                    document.getElementById('wea').textContent="";
-                    document.getElementById('city').textContent="";
-                    document.getElementById('coun').textContent="";
-                    document.getElementById('lat').textContent="";
-                    document.getElementById('lon').textContent="";
-                    document.getElementById('dta').style.display="none";
-                    document.getElementById('forecas').style.display="none";
-                    document.getElementById('sunr').textContent="";
-                        document.getElementById('suns').textContent="";
-                        document.getElementById('moonr').textContent="";
-                        document.getElementById('moons').textContent="";
-                        document.getElementById('moonp').textContent="";
-                        document.getElementById('mooni').textContent="";
-                        document.getElementById('CO').textContent="";
-                        document.getElementById('NO').textContent="";
-                        document.getElementById('O').textContent="";
-                        document.getElementById('SO').textContent="";
-                        document.getElementById('PM2').textContent="";
-                        document.getElementById('PM10').textContent="";
-                        document.getElementById('EPA').textContent="";
-                        document.querySelector(".graph").style.display="none";
-                        document.querySelector(".barg").style.display="none";
-                        document.querySelector(".mixgraph").style.display="none";
-                        document.querySelector(".data").style.display="none";
-                    document.querySelector(".airq").style.display="none";
-                    document.querySelector(".astro").style.display="none";
-                    document.getElementById('btncheck').textContent="Check";
-                }
-              else 
-              {  setLoading(true);
+                 setLoading(true);
              let a = document.getElementById('texts').value;
              let url = `http://api.weatherapi.com/v1/forecast.json?key=${props.apikey}&q=${a}&days=6&aqi=yes&alerts=no`;
              let data = await fetch(url);
@@ -83,6 +43,8 @@ const About = (props)=> {
                     document.getElementById('PM2').textContent="";
                     document.getElementById('PM10').textContent="";
                     document.getElementById('EPA').textContent="";
+                    document.querySelector(".data").style.display="none";
+                    document.querySelector(".astro").style.display="none";
                     document.querySelector(".graph").style.display="none";
                     document.querySelector(".barg").style.display="none";
                     document.querySelector(".mixgraph").style.display="none";
@@ -237,6 +199,9 @@ const About = (props)=> {
                 }
                 mgraph();
                 Bargraph();
+                
+                document.querySelector(".data").style.display="block";
+                document.querySelector(".astro").style.display="block";
                 document.querySelector(".graph").style.display="block";
                 document.querySelector(".barg").style.display="block";
                 document.querySelector(".mixgraph").style.display="block";
@@ -248,9 +213,7 @@ const About = (props)=> {
                  icn[i].src = parseData.current.condition.icon;
                 }}
                 
-             document.getElementById('btncheck').textContent="Clear"; 
-             document.getElementById('texts').setAttribute("disabled","");
-             }         }
+             }         
            var tem1,tem2,tem3,tem4,tem5,tem6;
           const Showgraph=()=>{
               let temp1 = document.getElementById('day1').textContent.split('/')[1];
@@ -297,7 +260,7 @@ const About = (props)=> {
           
     return ( 
     <div id='divi text-center py-2'>
-        <div className='allinfo d-flex justify-content-around mx-3 px-2'  style={props.mode==='light'?{color:'black',border:'1px solid black',backgroundColor:'aliceblue'}:{color:'white',border:'1px solid white',backgroundColor:'rgb(2, 2, 10)'}}>
+        <div className='allinfo d-flex justify-content-around mx-3 px-2'  style={props.mode==='light'?{boxShadow: '10px 10px 10px 0px rgb(13, 13, 14)',color:'black',border:'1px solid black',background: 'linear-gradient(90deg, rgba(236,251,254,1) 0%, rgba(234,232,255,1) 47%, rgba(200,235,221,1) 100%)'}:{boxShadow: '8px 8px 8px 0px silver',color:'white',border:'1px solid white',background: 'linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(29,26,77,1) 47%, rgba(41,97,75,1) 100%)'}}>
             <h4 className='maincontent'>City : <span id='city'></span></h4>
             <h4 className='maincontent'>Country : <span id='coun'></span></h4>
             <h4 className='maincontent'>Latitude : <span id='lat'></span></h4>
@@ -305,7 +268,7 @@ const About = (props)=> {
         </div>
         {loading && <Loader/>}
            <div className='boxF mx-3'>
-            <div className='data my-4 mx-3 boxS' style={props.mode==='light'?{color:'black',border:'1px solid black',backgroundColor:'aliceblue'}:{color:'white',border:'1px solid white',backgroundColor:'rgb(2, 2, 10)'}}>  
+            <div className='data my-4 mx-3 boxS' style={props.mode==='light'?{boxShadow: '10px 10px 10px 0px rgb(13, 13, 14)',color:'black',border:'1px solid black',background: 'linear-gradient(90deg, rgba(236,251,254,1) 0%, rgba(234,232,255,1) 47%, rgba(200,235,221,1) 100%)'}:{boxShadow: '8px 8px 8px 0px silver',color:'white',border:'1px solid white',background: 'linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(29,26,77,1) 47%, rgba(41,97,75,1) 100%)'}}>  
                 <h4 className='my-3 mx-3 maincontent'>Temperature : <span className='' id="Tem"></span></h4>
                 <h4 className='my-3 mx-3 maincontent'>Wind Speed : <span className='' id="WS"></span></h4>
                 <h4 className='my-3 mx-3 maincontent'>Wind Degree : <span className='' id="WD"></span></h4>
@@ -317,7 +280,7 @@ const About = (props)=> {
                 <h4 className='my-3 mx-3 maincontent '>UV : <span className='' id="UV"></span></h4>
             </div>
             <div className='mx-3'>
-                <div className="crds card my-4" style={props.mode==='light'?{backgroundColor:'aliceblue'}:{color:"white",border:"2px solid white",backgroundColor:'rgb(2, 2, 10)'}}>
+                <div className="crds card my-4" style={props.mode==='light'?{boxShadow: '10px 10px 10px 0px rgb(13, 13, 14)',background: 'linear-gradient(90deg, rgba(236,251,254,1) 0%, rgba(234,232,255,1) 47%, rgba(200,235,221,1) 100%)'}:{boxShadow: '8px 8px 8px 0px silver',color:"white",border:"2px solid white",background: 'linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(29,26,77,1) 47%, rgba(41,97,75,1) 100%)'}}>
                 <div className='thun'></div>
                 <div className="card-header text-center"><h3>Check Weather Stats</h3></div>
                 <div className="card-body"> <h5 className='text-center'>Enter Your City below</h5>
@@ -325,11 +288,11 @@ const About = (props)=> {
                 <div className='incorr text-center mt-2'><h5>Enter Proper City Name</h5></div>
                 <button className="btn btn-lg btn-info mt-2 form-control" id='btncheck' onClick={fetchData}>Check</button>
                 </div></div>
-            <div className='data2' id="dta" style={props.mode==='light'?{color:'black',border:'2px solid black',backgroundColor:'aliceblue'}:{color:'white',border:'2px solid white',backgroundColor:'rgb(2, 2, 10)'}}>
+            <div className='data2' id="dta" style={props.mode==='light'?{boxShadow: '10px 10px 10px 0px rgb(13, 13, 14)',color:'black',border:'2px solid black',background: 'linear-gradient(90deg, rgba(236,251,254,1) 0%, rgba(234,232,255,1) 47%, rgba(200,235,221,1) 100%)'}:{boxShadow: '8px 8px 8px 0px silver',color:'white',border:'2px solid white',background: 'linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(29,26,77,1) 47%, rgba(41,97,75,1) 100%)'}}>
                 <h4 className='maincontent text-center'>Current Weather Type : <span id='wea'></span></h4>
             </div>  
             </div>
-            <div className='astro my-4 boxS mx-3' id='astr' style={props.mode==='light'?{color:'black',border:'1px solid black',backgroundColor:'aliceblue'}:{color:'white',border:'1px solid white',backgroundColor:'rgb(2, 2, 10)'}}>
+            <div className='astro my-4 boxS mx-3' id='astr' style={props.mode==='light'?{boxShadow: '10px 10px 10px 0px rgb(13, 13, 14)',color:'black',border:'1px solid black',background: 'linear-gradient(90deg, rgba(236,251,254,1) 0%, rgba(234,232,255,1) 47%, rgba(200,235,221,1) 100%)'}:{boxShadow: '8px 8px 8px 0px silver',color:'white',border:'1px solid white',background: 'linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(29,26,77,1) 47%, rgba(41,97,75,1) 100%)'}}>
                 <h2 className='my-3 text-center'>Astro</h2>
                 <hr/>
                 <h4 className='maincontent text-center mt-4'>Sunrise Time  :  <span id='sunr'></span></h4>
@@ -342,7 +305,7 @@ const About = (props)=> {
             </div>
             </div>
             <div className='my-3 mx-3' id='forecas'>
-                <div className='my-3 fore' style={props.mode==='light'?{color:'black',border:'1px solid black',backgroundColor:'aliceblue'}:{color:'white',border:'1px solid white',backgroundColor:'rgb(2, 2, 10)'}}>
+                <div className='my-3 fore' style={props.mode==='light'?{boxShadow: '10px 10px 10px 0px rgb(13, 13, 14)',color:'black',border:'1px solid black',background: 'linear-gradient(90deg, rgba(236,251,254,1) 0%, rgba(234,232,255,1) 47%, rgba(200,235,221,1) 100%)'}:{boxShadow: '8px 8px 8px 0px silver',color:'white',border:'1px solid white',background: 'linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(29,26,77,1) 47%, rgba(41,97,75,1) 100%)'}}>
                         <figure>
                         <figcaption className="fs-3 text-center">Today</figcaption>
                         <div className='text-center'><img id='image1' alt=""/></div>
@@ -375,8 +338,8 @@ const About = (props)=> {
                         </figure>
                 </div>
             </div>
-            <div className='AIRQ boxF my-4 mx-2'>
-                <div className='airq my-2 mx-2' style={props.mode==='light'?{color:'black',border:'1px solid black',backgroundColor:'aliceblue'}:{color:'white',border:'1px solid white',backgroundColor:'rgb(2, 2, 10)'}}>
+            <div className='boxF my-4 mx-2'>
+                <div className='airq my-2 mx-2' style={props.mode==='light'?{boxShadow: '10px 10px 10px 0px rgb(13, 13, 14)',color:'black',border:'1px solid black',background: 'linear-gradient(90deg, rgba(236,251,254,1) 0%, rgba(234,232,255,1) 47%, rgba(200,235,221,1) 100%)'}:{boxShadow: '8px 8px 8px 0px silver',color:'white',border:'1px solid white',background: 'linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(29,26,77,1) 47%, rgba(41,97,75,1) 100%)'}}>
                     <h2 className='text-center my-2'>Air Quality</h2>
                         <ul>
                         <li className="d-flex justify-content-between align-items-center">
@@ -409,14 +372,14 @@ const About = (props)=> {
                         </li>
                         </ul>
                 </div>
-              <div className='graph my-4 mx-2' id='graph' style={props.mode==='light'?{color:'black',border:'1px solid black',backgroundColor:'aliceblue'}:{color:'white',border:'1px solid white',backgroundColor:'rgb(2, 2, 10)'}}>
+              <div className='graph my-4 mx-2' id='graph' style={props.mode==='light'?{boxShadow: '10px 10px 10px 0px rgb(13, 13, 14)',color:'black',border:'1px solid black',backgroundColor:'white'}:{color:'white',border:'1px solid white',backgroundColor:'rgb(42, 42, 42)'}}>
                 
                 </div>
                 
             </div>
-            <div className='GRAPH boxF my-4 mx-2'>
-            <div className='barg my-4 mx-2' id='barg' style={props.mode==='light'?{color:'black',border:'1px solid black',backgroundColor:'aliceblue'}:{color:'white',border:'1px solid white',backgroundColor:'rgb(2, 2, 10)'}}></div>
-            <div className='mixgraph my-4 mx-2' id='mgraph' style={props.mode==='light'?{color:'black',border:'1px solid black',backgroundColor:'aliceblue'}:{color:'white',border:'1px solid white',backgroundColor:'rgb(2, 2, 10)'}}></div>
+            <div className='boxF my-4 mx-2'>
+            <div className='barg my-4 mx-2' id='barg' style={props.mode==='light'?{boxShadow: '10px 10px 10px 0px rgb(13, 13, 14)',color:'black',border:'1px solid black',backgroundColor:'white'}:{color:'white',border:'1px solid white',backgroundColor:'rgb(42, 42, 42)'}}></div>
+            <div className='mixgraph my-4 mx-2' id='mgraph' style={props.mode==='light'?{boxShadow: '10px 10px 10px 0px rgb(13, 13, 14)',color:'black',border:'1px solid black',backgroundColor:'white'}:{color:'white',border:'1px solid white',backgroundColor:'rgb(42, 42, 42)'}}></div>
             </div>
     </div>
     )

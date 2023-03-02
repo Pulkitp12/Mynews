@@ -22,22 +22,21 @@ const Side=(props)=> {
         i=i+1;
       }
       e.currentTarget.style.backgroundColor="gainsboro";
-  
     }
   
   return (
     <div className='sidebar'>
-               <Sidebar style={{height: "100vh"}} defaultCollapsed={true} onMouseEnter={toggle} onMouseLeave={toggle} backgroundColor={props.mode==='light'?'#adad85':'gray'} transitionDuration={400}>
+               <Sidebar style={props.mode==='dark'?{height: "100vh",color:'white'}:{height:"100vh"}} defaultCollapsed={true} onMouseEnter={toggle} backgroundColor={props.mode==='light'?"#f8f9fa":"rgb(28, 28, 28)"} onMouseLeave={toggle} transitionDuration={400}>
                     <Menu>
                       <div className='element'>
                     <h2 className='text-center category'><i className='fa fa-fw fa-hand-o-down'></i></h2>
-                        <MenuItem component={<Link className='mnt' to="/business" onClick={active} />} ><i className="fa fa-fw fa-bitcoin"></i>Business</MenuItem>
-                        <MenuItem component={<Link className='mnt' to="/entertainment" onClick={active} />} ><i className="fa fa-fw fa-television"></i> Entertainment</MenuItem>
-                      <MenuItem component={<Link className='mnt' to="/general" onClick={active} />} ><i className="fa fa-fw fa-globe"></i> General</MenuItem>
-                      <MenuItem component={<Link className='mnt' to="/health" onClick={active} />} ><i className="fa fa-fw fa-heartbeat"></i>Health</MenuItem>
-                        <MenuItem component={<Link className='mnt' to="/science" onClick={active} />} ><i className="fa fa-fw fa-lightbulb-o"></i>Science</MenuItem>
-                        <MenuItem component={<Link className='mnt' to="/sports" onClick={active} />}><i className="fa fa-fw fa-futbol-o"></i>Sports</MenuItem>
-                      <MenuItem component={<Link className='mnt' to="/technology" onClick={active} />} ><i className="fa fa-fw fa-gears"></i>Technology</MenuItem>
+                        <strong><MenuItem component={<Link className='mnt' to="/business" onClick={active} />} ><i className="fa fa-fw fa-bitcoin"></i>Business</MenuItem></strong>
+                        <strong><MenuItem component={<Link className='mnt' to="/entertainment" onClick={active} />} ><i className="fa fa-fw fa-television"></i> Entertainment</MenuItem></strong>
+                      <strong><MenuItem component={<Link className='mnt' to="/general" onClick={active} />} ><i className="fa fa-fw fa-globe"></i> General</MenuItem></strong>
+                      <strong><MenuItem component={<Link className='mnt' to="/health" onClick={active} />} ><i className="fa fa-fw fa-heartbeat"></i>Health</MenuItem></strong>
+                        <strong><MenuItem component={<Link className='mnt' to="/science" onClick={active} />} ><i className="fa fa-fw fa-lightbulb-o"></i>Science</MenuItem></strong>
+                        <strong><MenuItem component={<Link className='mnt' to="/sports" onClick={active} />}><i className="fa fa-fw fa-futbol-o"></i>Sports</MenuItem></strong>
+                      <strong><MenuItem component={<Link className='mnt' to="/technology" onClick={active} />} ><i className="fa fa-fw fa-gears"></i>Technology</MenuItem></strong>
                       </div>
                     </Menu>
                   </Sidebar>
