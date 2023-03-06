@@ -16,7 +16,7 @@
     #flexSwitchCheckDefault{
         margin-left: -25px;
         border: 1px solid gray;
-        margin-top: 6px;
+        margin-top: 5px;
     }
     #lbl{
         display: block;
@@ -26,10 +26,6 @@
    .nv{
     border-bottom: 1px solid rgba(128, 128, 128, 0.436);
    }
-   #lgnn{
-    margin-top: 10px !important;
-    right: 220px !important;
-   }
    #lgnn ul{
     height: 480px !important;
    }
@@ -38,12 +34,8 @@
    }
 }
 #lgnn{
-    position: fixed;
-    right: 830px;
-    margin-top: 15px;
-    top: 0;
-    font-size: 25px;
     display: none;
+    margin-left: 20px;
 }
 #lgnn ul{
     background-color:gainsboro;

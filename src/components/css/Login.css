@@ -5,12 +5,12 @@
 }
 .boxes .form{
     position: absolute;
-    top: 20%;
+    top: 15%;
     width: 70vw;
     border-radius: 10px;
 }
 
-.boxes .form input{
+.boxes input{
     width: 100%;
     background-color: aliceblue;
     font-size: 15px;
@@ -71,7 +71,7 @@
 .bord .form{
     position: absolute;
     left: 17%;
-    top: 20%;
+    top: 15%;
     width: 70vw;
     border-radius: 10px;
 }
@@ -97,6 +97,10 @@
 }
 #psin{
     border-right: none;
+    border-radius: 5px;
+    border: 1px solid gainsboro;
+    border-right: none;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
+    height: 35px;
 }

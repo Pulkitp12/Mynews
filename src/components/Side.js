@@ -26,7 +26,7 @@ const Side=(props)=> {
   
   return (
     <div className='sidebar'>
-               <Sidebar style={props.mode==='dark'?{height: "100vh",color:'white'}:{height:"100vh"}} defaultCollapsed={true} onMouseEnter={toggle} backgroundColor={props.mode==='light'?"#f8f9fa":"rgb(28, 28, 28)"} onMouseLeave={toggle} transitionDuration={400}>
+               <Sidebar style={props.mode==='dark'?{height: "100vh",color:'white'}:{height:"100vh"}} defaultCollapsed={true} onMouseEnter={toggle} backgroundColor={props.mode==='light'?"rgb(148, 147, 147)":"rgb(69, 68, 68)"} onMouseLeave={toggle} transitionDuration={400}>
                     <Menu>
                       <div className='element'>
                     <h2 className='text-center category'><i className='fa fa-fw fa-hand-o-down'></i></h2>

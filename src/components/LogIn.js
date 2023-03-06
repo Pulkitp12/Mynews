@@ -89,10 +89,11 @@ const LogIn = (props) => {
   }
  
     return (
+      <>
       <div className='boxes text-center' style={props.mode==='light'?{color:'black',backgroundColor:'white'}:{color:'white',backgroundColor:'black'}}>
       <div className='form px-3' id='sub' style={props.mode==='light'?{color:'black',backgroundColor:'white',border: '3px solid black'}:{color:'white',backgroundColor:'black',border: '3px solid white'}}><h2 className='text-center'>LogIn/SignUp</h2>
         <input type="text" name="email" id="emin" placeholder="Enter Email here" className='form-control my-4'/>
-        <div className='d-flex justify-content-between'><input type="Password" className='form-control' name="password" id="psin" placeholder="Enter password"/><button className="see" onClick={chan}><i className="fa fa-x fa-eye"></i></button></div>
+        <div className='d-flex justify-content-between'><input type="Password" className='' name="password" id="psin" placeholder="Enter password"/><button className="see" onClick={chan}><i className="fa fa-x fa-eye"></i></button></div>
         <span className={`text-center text-${success}`} id='ale' style={{display:'none'}}></span>
         <button className='btn btn-md btn-success mt-4' id='lgn' onClick={add}>LOGIN</button>
         <div className='d-flex justify-content-around my-3 py-3'>
@@ -109,7 +110,7 @@ const LogIn = (props) => {
            
         </div>
       </div>
-      
+      </div>
       <div className='bord text-center' id="sup" style={props.mode==='light'?{color:'black',backgroundColor:'white'}:{color:'white',backgroundColor:'black'}}>
       <div className='form px-5 py-3' style={props.mode==='light'?{color:'black',backgroundColor:'white',border: '3px solid black'}:{color:'white',backgroundColor:'black',border: '3px solid white'}}><h1 className='text-center'>SignUp</h1>
                 <div className="mb-3">
@@ -133,7 +134,7 @@ const LogIn = (props) => {
             </div>    
       </div>
       
-      </div>
+      </>
     )
 }
  export default LogIn;
