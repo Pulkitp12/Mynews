@@ -18,9 +18,9 @@ import Side from './components/Side';
 const App=()=>{
   const pagesize=9;
   //const apikey= process.env.REACT_APP_API_KEY2;
-  const apikey = process.env.REACT_APP_API_KEY;
-  //const apik= process.env.REACT_APP_API_KEY3;
+  const apikey = process.env.REACT_APP_API_KEY2;
   const apik= process.env.REACT_APP_API_KEY4;
+  // const apik= process.env.REACT_APP_API_KEY3;
   const [mode, setMode]= useState('light')
   const toggleMode = () => {
   if (mode==='light')

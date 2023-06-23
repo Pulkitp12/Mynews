@@ -57,6 +57,14 @@ const About = (props)=> {
                 },3000)
              }
              else{
+                document.querySelector(".data").style.display="block";
+                document.querySelector(".astro").style.display="block";
+                document.querySelector(".graph").style.display="block";
+                document.querySelector(".barg").style.display="block";
+                document.querySelector(".mixgraph").style.display="block";
+                document.querySelector(".data").style.display="flex";
+                document.querySelector(".airq").style.display="block";
+                document.querySelector(".astro").style.display="flex";
                 document.getElementById('Pr').textContent=parseData.current.pressure_mb + " millibar";
                 document.getElementById('Tem').textContent=parseData.current.temp_c;
                 document.getElementById('Tem').innerHTML+="<sup>o</sup>C";
@@ -200,14 +208,6 @@ const About = (props)=> {
                 mgraph();
                 Bargraph();
                 
-                document.querySelector(".data").style.display="block";
-                document.querySelector(".astro").style.display="block";
-                document.querySelector(".graph").style.display="block";
-                document.querySelector(".barg").style.display="block";
-                document.querySelector(".mixgraph").style.display="block";
-                document.querySelector(".data").style.display="flex";
-                document.querySelector(".airq").style.display="block";
-                document.querySelector(".astro").style.display="flex";
                  let icn = document.querySelectorAll("img");
                  for(let i=0;i<icn.length;i++){
                  icn[i].src = parseData.current.condition.icon;
